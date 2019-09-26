@@ -4,7 +4,7 @@
   <PropertyGroup>
     <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
     <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
-    <ProjectGuid>{02EEE008-E9D4-4B0E-9EB2-68B90361C68F}</ProjectGuid>
+    <ProjectGuid>{8D99044C-864F-4731-B5F1-95BB13606E99}</ProjectGuid>
     <OutputType>WinExe</OutputType>
     <RootNamespace>Övning_2._1</RootNamespace>
     <AssemblyName>Övning 2.1</AssemblyName>
