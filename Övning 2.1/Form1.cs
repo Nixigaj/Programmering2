@@ -14,6 +14,7 @@ namespace Övning_2._1
     {
         public Form1()
         {
+            // Detta är ett kommentartest
             InitializeComponent();
         }
     }
