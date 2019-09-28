@@ -14,29 +14,32 @@ namespace Övning_2._1
     {
         public Form1()
         {
-            
             InitializeComponent();
+
+            // Tömmer felmeddelandet.
+            labelFelmeddelande.Text = "";
         }
 
+        // Skapar en ljudspelare för felmeddelanden.
+        System.Media.SoundPlayer errorSound = new System.Media.SoundPlayer(@"C:\Windows\Media\Windows Background.wav");
 
-
-
-
-
-
-
-
-
-        ///////////////////////////////////////////////////////////
-
-        private void GroupBox3_Enter(object sender, EventArgs e)
-        {
-            
-        }
-
-        private void Form1_Load(object sender, EventArgs e)
+        private void label2_Click(object sender, EventArgs e)
         {
 
         }
+
+        private void pictureBox3_Click(object sender, EventArgs e)
+        {
+            // Skickar användaren till Github om man klickar på mitt namn.
+            System.Diagnostics.Process.Start("https://github.com/Nixigaj");
+        }
+    }
+
+    // Ett enum som kan hålla variabel för vilken typ av medie som stoppas in vid en given tidpunkt
+    enum medieTyp
+    {
+        Bok,
+        Ljud,
+        Film
     }
 }
