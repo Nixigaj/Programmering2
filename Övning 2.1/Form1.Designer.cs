@@ -1,6 +1,6 @@
 ﻿namespace Övning_2._1
 {
-    partial class Form1
+    partial class FormStart
     {
         /// <summary>
         /// Required designer variable.
@@ -28,151 +28,172 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Form1));
-            this.label3 = new System.Windows.Forms.Label();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.buttonRegistrera = new System.Windows.Forms.Button();
-            this.listView1 = new System.Windows.Forms.ListView();
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStart));
+            this.labelUpplösning = new System.Windows.Forms.Label();
+            this.textBoxTitel = new System.Windows.Forms.TextBox();
+            this.labelLängd = new System.Windows.Forms.Label();
+            this.labelTitel = new System.Windows.Forms.Label();
+            this.buttonRegistreraSpara = new System.Windows.Forms.Button();
+            this.listViewBibliotek = new System.Windows.Forms.ListView();
             this.columnHeaderTitel = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderTyp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderLängd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.radioButton3 = new System.Windows.Forms.RadioButton();
-            this.radioButton2 = new System.Windows.Forms.RadioButton();
-            this.radioButton1 = new System.Windows.Forms.RadioButton();
+            this.columnHeaderUpplösning = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.groupBoxMedietyp = new System.Windows.Forms.GroupBox();
+            this.radioButtonFilm = new System.Windows.Forms.RadioButton();
+            this.radioButtonLjudspår = new System.Windows.Forms.RadioButton();
+            this.radioButtonBok = new System.Windows.Forms.RadioButton();
             this.comboBoxUpplösning = new System.Windows.Forms.ComboBox();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
-            this.pictureBox2 = new System.Windows.Forms.PictureBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.labelFelmeddelande = new System.Windows.Forms.Label();
-            this.numericUpDown1 = new System.Windows.Forms.NumericUpDown();
-            this.label2 = new System.Windows.Forms.Label();
-            this.numericUpDown2 = new System.Windows.Forms.NumericUpDown();
-            this.label6 = new System.Windows.Forms.Label();
-            this.numericUpDown3 = new System.Windows.Forms.NumericUpDown();
-            this.label7 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
-            this.button2 = new System.Windows.Forms.Button();
-            this.button3 = new System.Windows.Forms.Button();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).BeginInit();
+            this.pictureBoxEJ = new System.Windows.Forms.PictureBox();
+            this.pictureBoxDivider = new System.Windows.Forms.PictureBox();
+            this.pictureBoxLogga = new System.Windows.Forms.PictureBox();
+            this.labelTitelTomFel = new System.Windows.Forms.Label();
+            this.numericUpDownSidorLrTimmar = new System.Windows.Forms.NumericUpDown();
+            this.labelTimmar = new System.Windows.Forms.Label();
+            this.numericUpDownMinuter = new System.Windows.Forms.NumericUpDown();
+            this.labelMinuter = new System.Windows.Forms.Label();
+            this.numericUpDownSekunder = new System.Windows.Forms.NumericUpDown();
+            this.labelSekunder = new System.Windows.Forms.Label();
+            this.buttonRedigera = new System.Windows.Forms.Button();
+            this.buttonTaBort = new System.Windows.Forms.Button();
+            this.buttonÅngra = new System.Windows.Forms.Button();
+            this.checkBoxRensa = new System.Windows.Forms.CheckBox();
+            this.groupBoxMedietyp.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEJ)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDivider)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogga)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSidorLrTimmar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinuter)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSekunder)).BeginInit();
             this.SuspendLayout();
             // 
-            // label3
+            // labelUpplösning
             // 
-            this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(12, 67);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(60, 13);
-            this.label3.TabIndex = 0;
-            this.label3.Text = "Upplösning";
+            this.labelUpplösning.AutoSize = true;
+            this.labelUpplösning.Enabled = false;
+            this.labelUpplösning.Location = new System.Drawing.Point(12, 67);
+            this.labelUpplösning.Name = "labelUpplösning";
+            this.labelUpplösning.Size = new System.Drawing.Size(60, 13);
+            this.labelUpplösning.TabIndex = 0;
+            this.labelUpplösning.Text = "Upplösning";
             // 
-            // textBox3
+            // textBoxTitel
             // 
-            this.textBox3.Location = new System.Drawing.Point(78, 12);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(181, 20);
-            this.textBox3.TabIndex = 4;
+            this.textBoxTitel.Location = new System.Drawing.Point(78, 12);
+            this.textBoxTitel.Name = "textBoxTitel";
+            this.textBoxTitel.Size = new System.Drawing.Size(120, 20);
+            this.textBoxTitel.TabIndex = 4;
             // 
-            // label4
+            // labelLängd
             // 
-            this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(12, 41);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(39, 13);
-            this.label4.TabIndex = 5;
-            this.label4.Text = "Speltid";
+            this.labelLängd.AutoSize = true;
+            this.labelLängd.Location = new System.Drawing.Point(12, 41);
+            this.labelLängd.Name = "labelLängd";
+            this.labelLängd.Size = new System.Drawing.Size(31, 13);
+            this.labelLängd.TabIndex = 5;
+            this.labelLängd.Text = "Sidor";
             // 
-            // label5
+            // labelTitel
             // 
-            this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(12, 15);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(27, 13);
-            this.label5.TabIndex = 6;
-            this.label5.Text = "Titel";
+            this.labelTitel.AutoSize = true;
+            this.labelTitel.Location = new System.Drawing.Point(12, 15);
+            this.labelTitel.Name = "labelTitel";
+            this.labelTitel.Size = new System.Drawing.Size(27, 13);
+            this.labelTitel.TabIndex = 6;
+            this.labelTitel.Text = "Titel";
             // 
-            // buttonRegistrera
+            // buttonRegistreraSpara
             // 
-            this.buttonRegistrera.Location = new System.Drawing.Point(78, 91);
-            this.buttonRegistrera.Name = "buttonRegistrera";
-            this.buttonRegistrera.Size = new System.Drawing.Size(102, 23);
-            this.buttonRegistrera.TabIndex = 7;
-            this.buttonRegistrera.Text = "Registrera bok";
-            this.buttonRegistrera.UseVisualStyleBackColor = true;
+            this.buttonRegistreraSpara.Location = new System.Drawing.Point(78, 91);
+            this.buttonRegistreraSpara.Name = "buttonRegistreraSpara";
+            this.buttonRegistreraSpara.Size = new System.Drawing.Size(102, 23);
+            this.buttonRegistreraSpara.TabIndex = 7;
+            this.buttonRegistreraSpara.Text = "Registrera bok";
+            this.buttonRegistreraSpara.UseVisualStyleBackColor = true;
+            this.buttonRegistreraSpara.Click += new System.EventHandler(this.buttonRegistreraSpara_Click);
             // 
-            // listView1
+            // listViewBibliotek
             // 
-            this.listView1.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
+            this.listViewBibliotek.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
             this.columnHeaderTitel,
-            this.columnHeaderLängd});
-            this.listView1.HideSelection = false;
-            this.listView1.Location = new System.Drawing.Point(15, 167);
-            this.listView1.Name = "listView1";
-            this.listView1.Size = new System.Drawing.Size(244, 312);
-            this.listView1.TabIndex = 3;
-            this.listView1.UseCompatibleStateImageBehavior = false;
-            this.listView1.View = System.Windows.Forms.View.Details;
+            this.columnHeaderTyp,
+            this.columnHeaderLängd,
+            this.columnHeaderUpplösning});
+            this.listViewBibliotek.HideSelection = false;
+            this.listViewBibliotek.Location = new System.Drawing.Point(15, 167);
+            this.listViewBibliotek.Name = "listViewBibliotek";
+            this.listViewBibliotek.Size = new System.Drawing.Size(244, 312);
+            this.listViewBibliotek.TabIndex = 3;
+            this.listViewBibliotek.UseCompatibleStateImageBehavior = false;
+            this.listViewBibliotek.View = System.Windows.Forms.View.Details;
             // 
             // columnHeaderTitel
             // 
             this.columnHeaderTitel.Text = "Titel på mediet";
             this.columnHeaderTitel.Width = 89;
             // 
+            // columnHeaderTyp
+            // 
+            this.columnHeaderTyp.DisplayIndex = 2;
+            this.columnHeaderTyp.Text = "Typ";
+            this.columnHeaderTyp.Width = 32;
+            // 
             // columnHeaderLängd
             // 
-            this.columnHeaderLängd.Text = "Längd på mediet";
-            this.columnHeaderLängd.Width = 91;
+            this.columnHeaderLängd.DisplayIndex = 1;
+            this.columnHeaderLängd.Text = "Längd";
             // 
-            // groupBox1
+            // columnHeaderUpplösning
             // 
-            this.groupBox1.Controls.Add(this.radioButton3);
-            this.groupBox1.Controls.Add(this.radioButton2);
-            this.groupBox1.Controls.Add(this.radioButton1);
-            this.groupBox1.Location = new System.Drawing.Point(186, 64);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(73, 97);
-            this.groupBox1.TabIndex = 8;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Medietyp";
+            this.columnHeaderUpplösning.Text = "Uppl.";
+            this.columnHeaderUpplösning.Width = 42;
             // 
-            // radioButton3
+            // groupBoxMedietyp
             // 
-            this.radioButton3.AutoSize = true;
-            this.radioButton3.Location = new System.Drawing.Point(6, 65);
-            this.radioButton3.Name = "radioButton3";
-            this.radioButton3.Size = new System.Drawing.Size(43, 17);
-            this.radioButton3.TabIndex = 5;
-            this.radioButton3.Text = "Film";
-            this.radioButton3.UseVisualStyleBackColor = true;
+            this.groupBoxMedietyp.Controls.Add(this.radioButtonFilm);
+            this.groupBoxMedietyp.Controls.Add(this.radioButtonLjudspår);
+            this.groupBoxMedietyp.Controls.Add(this.radioButtonBok);
+            this.groupBoxMedietyp.Location = new System.Drawing.Point(186, 64);
+            this.groupBoxMedietyp.Name = "groupBoxMedietyp";
+            this.groupBoxMedietyp.Size = new System.Drawing.Size(73, 97);
+            this.groupBoxMedietyp.TabIndex = 8;
+            this.groupBoxMedietyp.TabStop = false;
+            this.groupBoxMedietyp.Text = "Medietyp";
             // 
-            // radioButton2
+            // radioButtonFilm
             // 
-            this.radioButton2.AutoSize = true;
-            this.radioButton2.Location = new System.Drawing.Point(6, 42);
-            this.radioButton2.Name = "radioButton2";
-            this.radioButton2.Size = new System.Drawing.Size(65, 17);
-            this.radioButton2.TabIndex = 4;
-            this.radioButton2.Text = "Ljudspår";
-            this.radioButton2.UseVisualStyleBackColor = true;
+            this.radioButtonFilm.AutoSize = true;
+            this.radioButtonFilm.Location = new System.Drawing.Point(6, 65);
+            this.radioButtonFilm.Name = "radioButtonFilm";
+            this.radioButtonFilm.Size = new System.Drawing.Size(43, 17);
+            this.radioButtonFilm.TabIndex = 5;
+            this.radioButtonFilm.Text = "Film";
+            this.radioButtonFilm.UseVisualStyleBackColor = true;
+            this.radioButtonFilm.CheckedChanged += new System.EventHandler(this.radioButtonFilm_CheckedChanged);
             // 
-            // radioButton1
+            // radioButtonLjudspår
             // 
-            this.radioButton1.AutoSize = true;
-            this.radioButton1.Checked = true;
-            this.radioButton1.Location = new System.Drawing.Point(6, 19);
-            this.radioButton1.Name = "radioButton1";
-            this.radioButton1.Size = new System.Drawing.Size(44, 17);
-            this.radioButton1.TabIndex = 3;
-            this.radioButton1.TabStop = true;
-            this.radioButton1.Text = "Bok";
-            this.radioButton1.UseVisualStyleBackColor = true;
+            this.radioButtonLjudspår.AutoSize = true;
+            this.radioButtonLjudspår.Location = new System.Drawing.Point(6, 42);
+            this.radioButtonLjudspår.Name = "radioButtonLjudspår";
+            this.radioButtonLjudspår.Size = new System.Drawing.Size(65, 17);
+            this.radioButtonLjudspår.TabIndex = 4;
+            this.radioButtonLjudspår.Text = "Ljudspår";
+            this.radioButtonLjudspår.UseVisualStyleBackColor = true;
+            this.radioButtonLjudspår.CheckedChanged += new System.EventHandler(this.radioButtonLjudspår_CheckedChanged);
+            // 
+            // radioButtonBok
+            // 
+            this.radioButtonBok.AutoSize = true;
+            this.radioButtonBok.Checked = true;
+            this.radioButtonBok.Location = new System.Drawing.Point(6, 19);
+            this.radioButtonBok.Name = "radioButtonBok";
+            this.radioButtonBok.Size = new System.Drawing.Size(44, 17);
+            this.radioButtonBok.TabIndex = 3;
+            this.radioButtonBok.TabStop = true;
+            this.radioButtonBok.Text = "Bok";
+            this.radioButtonBok.UseVisualStyleBackColor = true;
+            this.radioButtonBok.CheckedChanged += new System.EventHandler(this.radioButtonBok_CheckedChanged);
             // 
             // comboBoxUpplösning
             // 
@@ -183,193 +204,236 @@
             this.comboBoxUpplösning.Size = new System.Drawing.Size(102, 21);
             this.comboBoxUpplösning.TabIndex = 9;
             // 
-            // pictureBox3
+            // pictureBoxEJ
             // 
-            this.pictureBox3.Image = global::Övning_2._1.Properties.Resources.ErikNamn;
-            this.pictureBox3.Location = new System.Drawing.Point(146, 485);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(113, 22);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
-            this.pictureBox3.TabIndex = 13;
-            this.pictureBox3.TabStop = false;
-            this.pictureBox3.Click += new System.EventHandler(this.pictureBox3_Click);
+            this.pictureBoxEJ.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxEJ.Image")));
+            this.pictureBoxEJ.Location = new System.Drawing.Point(146, 485);
+            this.pictureBoxEJ.Name = "pictureBoxEJ";
+            this.pictureBoxEJ.Size = new System.Drawing.Size(115, 22);
+            this.pictureBoxEJ.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxEJ.TabIndex = 13;
+            this.pictureBoxEJ.TabStop = false;
+            this.pictureBoxEJ.Click += new System.EventHandler(this.pictureBoxEJ_Click);
             // 
-            // pictureBox2
+            // pictureBoxDivider
             // 
-            this.pictureBox2.Image = global::Övning_2._1.Properties.Resources.HorizontalDivider;
-            this.pictureBox2.Location = new System.Drawing.Point(15, 120);
-            this.pictureBox2.Name = "pictureBox2";
-            this.pictureBox2.Size = new System.Drawing.Size(165, 10);
-            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox2.TabIndex = 12;
-            this.pictureBox2.TabStop = false;
+            this.pictureBoxDivider.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxDivider.Image")));
+            this.pictureBoxDivider.Location = new System.Drawing.Point(15, 120);
+            this.pictureBoxDivider.Name = "pictureBoxDivider";
+            this.pictureBoxDivider.Size = new System.Drawing.Size(166, 11);
+            this.pictureBoxDivider.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxDivider.TabIndex = 12;
+            this.pictureBoxDivider.TabStop = false;
             // 
-            // pictureBox1
+            // pictureBoxLogga
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(15, 136);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(165, 25);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pictureBox1.TabIndex = 11;
-            this.pictureBox1.TabStop = false;
+            this.pictureBoxLogga.Image = ((System.Drawing.Image)(resources.GetObject("pictureBoxLogga.Image")));
+            this.pictureBoxLogga.Location = new System.Drawing.Point(15, 137);
+            this.pictureBoxLogga.Name = "pictureBoxLogga";
+            this.pictureBoxLogga.Size = new System.Drawing.Size(166, 24);
+            this.pictureBoxLogga.SizeMode = System.Windows.Forms.PictureBoxSizeMode.AutoSize;
+            this.pictureBoxLogga.TabIndex = 11;
+            this.pictureBoxLogga.TabStop = false;
             // 
-            // labelFelmeddelande
+            // labelTitelTomFel
             // 
-            this.labelFelmeddelande.AutoSize = true;
-            this.labelFelmeddelande.ForeColor = System.Drawing.Color.Red;
-            this.labelFelmeddelande.Location = new System.Drawing.Point(12, 510);
-            this.labelFelmeddelande.Name = "labelFelmeddelande";
-            this.labelFelmeddelande.Size = new System.Drawing.Size(82, 13);
-            this.labelFelmeddelande.TabIndex = 14;
-            this.labelFelmeddelande.Text = "Felmeddelande:";
+            this.labelTitelTomFel.AutoSize = true;
+            this.labelTitelTomFel.BackColor = System.Drawing.SystemColors.HighlightText;
+            this.labelTitelTomFel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Underline, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTitelTomFel.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.labelTitelTomFel.Location = new System.Drawing.Point(79, 15);
+            this.labelTitelTomFel.Name = "labelTitelTomFel";
+            this.labelTitelTomFel.Size = new System.Drawing.Size(116, 13);
+            this.labelTitelTomFel.TabIndex = 14;
+            this.labelTitelTomFel.Text = "Får ej lämnas tomt    ❌";
+            this.labelTitelTomFel.Visible = false;
+            this.labelTitelTomFel.Click += new System.EventHandler(this.labelTitelTomFel_Click);
             // 
-            // numericUpDown1
+            // numericUpDownSidorLrTimmar
             // 
-            this.numericUpDown1.Location = new System.Drawing.Point(78, 38);
-            this.numericUpDown1.Name = "numericUpDown1";
-            this.numericUpDown1.Size = new System.Drawing.Size(40, 20);
-            this.numericUpDown1.TabIndex = 15;
+            this.numericUpDownSidorLrTimmar.Location = new System.Drawing.Point(78, 38);
+            this.numericUpDownSidorLrTimmar.Maximum = new decimal(new int[] {
+            999,
+            0,
+            0,
+            0});
+            this.numericUpDownSidorLrTimmar.Name = "numericUpDownSidorLrTimmar";
+            this.numericUpDownSidorLrTimmar.Size = new System.Drawing.Size(40, 20);
+            this.numericUpDownSidorLrTimmar.TabIndex = 15;
             // 
-            // label2
+            // labelTimmar
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(121, 41);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(13, 13);
-            this.label2.TabIndex = 16;
-            this.label2.Text = "h";
+            this.labelTimmar.AutoSize = true;
+            this.labelTimmar.Enabled = false;
+            this.labelTimmar.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelTimmar.Location = new System.Drawing.Point(121, 41);
+            this.labelTimmar.Name = "labelTimmar";
+            this.labelTimmar.Size = new System.Drawing.Size(13, 13);
+            this.labelTimmar.TabIndex = 16;
+            this.labelTimmar.Text = "h";
             // 
-            // numericUpDown2
+            // numericUpDownMinuter
             // 
-            this.numericUpDown2.Location = new System.Drawing.Point(140, 38);
-            this.numericUpDown2.Name = "numericUpDown2";
-            this.numericUpDown2.Size = new System.Drawing.Size(40, 20);
-            this.numericUpDown2.TabIndex = 17;
+            this.numericUpDownMinuter.Enabled = false;
+            this.numericUpDownMinuter.Location = new System.Drawing.Point(140, 38);
+            this.numericUpDownMinuter.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.numericUpDownMinuter.Name = "numericUpDownMinuter";
+            this.numericUpDownMinuter.Size = new System.Drawing.Size(40, 20);
+            this.numericUpDownMinuter.TabIndex = 17;
             // 
-            // label6
+            // labelMinuter
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label6.Location = new System.Drawing.Point(183, 41);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(15, 13);
-            this.label6.TabIndex = 18;
-            this.label6.Text = "m";
+            this.labelMinuter.AutoSize = true;
+            this.labelMinuter.Enabled = false;
+            this.labelMinuter.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.labelMinuter.Location = new System.Drawing.Point(183, 41);
+            this.labelMinuter.Name = "labelMinuter";
+            this.labelMinuter.Size = new System.Drawing.Size(15, 13);
+            this.labelMinuter.TabIndex = 18;
+            this.labelMinuter.Text = "m";
             // 
-            // numericUpDown3
+            // numericUpDownSekunder
             // 
-            this.numericUpDown3.Location = new System.Drawing.Point(204, 38);
-            this.numericUpDown3.Name = "numericUpDown3";
-            this.numericUpDown3.Size = new System.Drawing.Size(40, 20);
-            this.numericUpDown3.TabIndex = 19;
+            this.numericUpDownSekunder.Enabled = false;
+            this.numericUpDownSekunder.Location = new System.Drawing.Point(204, 38);
+            this.numericUpDownSekunder.Maximum = new decimal(new int[] {
+            59,
+            0,
+            0,
+            0});
+            this.numericUpDownSekunder.Name = "numericUpDownSekunder";
+            this.numericUpDownSekunder.Size = new System.Drawing.Size(40, 20);
+            this.numericUpDownSekunder.TabIndex = 19;
             // 
-            // label7
+            // labelSekunder
             // 
-            this.label7.AutoSize = true;
-            this.label7.Location = new System.Drawing.Point(247, 41);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(12, 13);
-            this.label7.TabIndex = 20;
-            this.label7.Text = "s";
+            this.labelSekunder.AutoSize = true;
+            this.labelSekunder.Enabled = false;
+            this.labelSekunder.Location = new System.Drawing.Point(247, 41);
+            this.labelSekunder.Name = "labelSekunder";
+            this.labelSekunder.Size = new System.Drawing.Size(12, 13);
+            this.labelSekunder.TabIndex = 20;
+            this.labelSekunder.Text = "s";
             // 
-            // button1
+            // buttonRedigera
             // 
-            this.button1.Location = new System.Drawing.Point(15, 485);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(58, 21);
-            this.button1.TabIndex = 21;
-            this.button1.Text = "Redigera";
-            this.button1.UseVisualStyleBackColor = true;
+            this.buttonRedigera.Enabled = false;
+            this.buttonRedigera.Location = new System.Drawing.Point(15, 485);
+            this.buttonRedigera.Name = "buttonRedigera";
+            this.buttonRedigera.Size = new System.Drawing.Size(58, 21);
+            this.buttonRedigera.TabIndex = 21;
+            this.buttonRedigera.Text = "Redigera";
+            this.buttonRedigera.UseVisualStyleBackColor = true;
             // 
-            // button2
+            // buttonTaBort
             // 
-            this.button2.Location = new System.Drawing.Point(78, 485);
-            this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(58, 21);
-            this.button2.TabIndex = 22;
-            this.button2.Text = "Ta bort";
-            this.button2.UseVisualStyleBackColor = true;
+            this.buttonTaBort.Enabled = false;
+            this.buttonTaBort.Location = new System.Drawing.Point(78, 485);
+            this.buttonTaBort.Name = "buttonTaBort";
+            this.buttonTaBort.Size = new System.Drawing.Size(58, 21);
+            this.buttonTaBort.TabIndex = 22;
+            this.buttonTaBort.Text = "Ta bort";
+            this.buttonTaBort.UseVisualStyleBackColor = true;
             // 
-            // button3
+            // buttonÅngra
             // 
-            this.button3.Location = new System.Drawing.Point(15, 91);
-            this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(57, 23);
-            this.button3.TabIndex = 23;
-            this.button3.Text = "Ångra";
-            this.button3.UseVisualStyleBackColor = true;
+            this.buttonÅngra.Enabled = false;
+            this.buttonÅngra.Location = new System.Drawing.Point(15, 91);
+            this.buttonÅngra.Name = "buttonÅngra";
+            this.buttonÅngra.Size = new System.Drawing.Size(57, 23);
+            this.buttonÅngra.TabIndex = 23;
+            this.buttonÅngra.Text = "Ångra";
+            this.buttonÅngra.UseVisualStyleBackColor = true;
             // 
-            // Form1
+            // checkBoxRensa
+            // 
+            this.checkBoxRensa.AutoSize = true;
+            this.checkBoxRensa.Checked = true;
+            this.checkBoxRensa.CheckState = System.Windows.Forms.CheckState.Checked;
+            this.checkBoxRensa.Location = new System.Drawing.Point(204, 14);
+            this.checkBoxRensa.Name = "checkBoxRensa";
+            this.checkBoxRensa.Size = new System.Drawing.Size(57, 17);
+            this.checkBoxRensa.TabIndex = 24;
+            this.checkBoxRensa.Text = "Rensa";
+            this.checkBoxRensa.UseVisualStyleBackColor = true;
+            // 
+            // FormStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(784, 850);
-            this.Controls.Add(this.button3);
-            this.Controls.Add(this.button2);
-            this.Controls.Add(this.button1);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.numericUpDown3);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.numericUpDown2);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.numericUpDown1);
-            this.Controls.Add(this.labelFelmeddelande);
-            this.Controls.Add(this.pictureBox3);
-            this.Controls.Add(this.pictureBox2);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.buttonRegistrera);
+            this.ClientSize = new System.Drawing.Size(273, 515);
+            this.Controls.Add(this.checkBoxRensa);
+            this.Controls.Add(this.buttonÅngra);
+            this.Controls.Add(this.buttonTaBort);
+            this.Controls.Add(this.buttonRedigera);
+            this.Controls.Add(this.labelSekunder);
+            this.Controls.Add(this.numericUpDownSekunder);
+            this.Controls.Add(this.labelMinuter);
+            this.Controls.Add(this.numericUpDownMinuter);
+            this.Controls.Add(this.labelTimmar);
+            this.Controls.Add(this.numericUpDownSidorLrTimmar);
+            this.Controls.Add(this.labelTitelTomFel);
+            this.Controls.Add(this.pictureBoxEJ);
+            this.Controls.Add(this.pictureBoxDivider);
+            this.Controls.Add(this.pictureBoxLogga);
+            this.Controls.Add(this.buttonRegistreraSpara);
             this.Controls.Add(this.comboBoxUpplösning);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.listView1);
-            this.Controls.Add(this.textBox3);
-            this.Controls.Add(this.label3);
+            this.Controls.Add(this.groupBoxMedietyp);
+            this.Controls.Add(this.labelTitel);
+            this.Controls.Add(this.labelLängd);
+            this.Controls.Add(this.listViewBibliotek);
+            this.Controls.Add(this.textBoxTitel);
+            this.Controls.Add(this.labelUpplösning);
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.Name = "Form1";
-            this.Text = "Bibblan";
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown1)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.numericUpDown3)).EndInit();
+            this.Name = "FormStart";
+            this.Text = "Biblioteket";
+            this.groupBoxMedietyp.ResumeLayout(false);
+            this.groupBoxMedietyp.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxEJ)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxDivider)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBoxLogga)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSidorLrTimmar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMinuter)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.numericUpDownSekunder)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
         }
 
         #endregion
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.Label label3;
-        private System.Windows.Forms.Button buttonRegistrera;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.ListView listView1;
+        private System.Windows.Forms.TextBox textBoxTitel;
+        private System.Windows.Forms.Label labelUpplösning;
+        private System.Windows.Forms.Button buttonRegistreraSpara;
+        private System.Windows.Forms.Label labelTitel;
+        private System.Windows.Forms.Label labelLängd;
+        private System.Windows.Forms.ListView listViewBibliotek;
         private System.Windows.Forms.ColumnHeader columnHeaderTitel;
         private System.Windows.Forms.ColumnHeader columnHeaderLängd;
-        private System.Windows.Forms.GroupBox groupBox1;
+        private System.Windows.Forms.GroupBox groupBoxMedietyp;
         private System.Windows.Forms.ComboBox comboBoxUpplösning;
-        private System.Windows.Forms.RadioButton radioButton3;
-        private System.Windows.Forms.RadioButton radioButton2;
-        private System.Windows.Forms.RadioButton radioButton1;
-        private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.PictureBox pictureBox3;
-        private System.Windows.Forms.Label labelFelmeddelande;
-        private System.Windows.Forms.NumericUpDown numericUpDown1;
-        private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.NumericUpDown numericUpDown2;
-        private System.Windows.Forms.Label label6;
-        private System.Windows.Forms.NumericUpDown numericUpDown3;
-        private System.Windows.Forms.Label label7;
-        private System.Windows.Forms.Button button1;
-        private System.Windows.Forms.Button button2;
-        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.RadioButton radioButtonFilm;
+        private System.Windows.Forms.RadioButton radioButtonLjudspår;
+        private System.Windows.Forms.RadioButton radioButtonBok;
+        private System.Windows.Forms.PictureBox pictureBoxLogga;
+        private System.Windows.Forms.PictureBox pictureBoxDivider;
+        private System.Windows.Forms.PictureBox pictureBoxEJ;
+        private System.Windows.Forms.Label labelTitelTomFel;
+        private System.Windows.Forms.NumericUpDown numericUpDownSidorLrTimmar;
+        private System.Windows.Forms.Label labelTimmar;
+        private System.Windows.Forms.NumericUpDown numericUpDownMinuter;
+        private System.Windows.Forms.Label labelMinuter;
+        private System.Windows.Forms.NumericUpDown numericUpDownSekunder;
+        private System.Windows.Forms.Label labelSekunder;
+        private System.Windows.Forms.Button buttonRedigera;
+        private System.Windows.Forms.Button buttonTaBort;
+        private System.Windows.Forms.Button buttonÅngra;
+        private System.Windows.Forms.ColumnHeader columnHeaderTyp;
+        private System.Windows.Forms.ColumnHeader columnHeaderUpplösning;
+        private System.Windows.Forms.CheckBox checkBoxRensa;
     }
 }
 

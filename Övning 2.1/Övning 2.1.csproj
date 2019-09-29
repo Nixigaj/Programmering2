@@ -88,22 +88,14 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\BiblioteketLogga.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\HorizontalDivider.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <None Include="Resources\ErikNamn.png" />
-  </ItemGroup>
-  <ItemGroup>
     <None Include="Resources\Icon.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\Icon.ico" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Icon.ico" />
+    <None Include="Resources\Icon.ico" />
+    <None Include="Resources\HorizontalDivider.png" />
+    <None Include="Resources\BiblioteketLogga.png" />
+    <None Include="Resources\ErikNamn.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
