@@ -104,6 +104,7 @@
             this.buttonRegFörsäljning.TabIndex = 5;
             this.buttonRegFörsäljning.Text = "Registrera försäljning";
             this.buttonRegFörsäljning.UseVisualStyleBackColor = true;
+            this.buttonRegFörsäljning.Click += new System.EventHandler(this.ButtonRegFörsäljning_Click);
             // 
             // textBoxFörsäljning
             // 
@@ -177,6 +178,7 @@
             this.buttonRegArbetspass.TabIndex = 3;
             this.buttonRegArbetspass.Text = "Registera arbetspass";
             this.buttonRegArbetspass.UseVisualStyleBackColor = true;
+            this.buttonRegArbetspass.Click += new System.EventHandler(this.ButtonRegArbetspass_Click);
             // 
             // textBoxArbetadTid
             // 

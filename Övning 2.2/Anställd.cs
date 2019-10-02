@@ -14,5 +14,15 @@ namespace Övning_2._2
         {
             this.namn = namn;
         }
+
+        public double beräknaLön()
+        {
+            return 0.0;
+        }
+
+        public override string ToString()
+        {
+            return namn + " (Anställd)";
+        }
     }
 }
