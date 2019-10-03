@@ -8,14 +8,14 @@ namespace Övning_2._2
 {
     class Anställd
     {
-        private string namn;
+        protected string namn;
 
-        public Anställd(string namn)
+        public Anställd(string n)
         {
-            this.namn = namn;
+            this.namn = n;
         }
 
-        public double beräknaLön()
+        public virtual double beräknaLön()
         {
             return 0.0;
         }
