@@ -15,7 +15,7 @@ namespace Övning_2._2
             this.namn = n;
         }
 
-        public virtual double beräknaLön()
+        public virtual double BeräknaLön()
         {
             return 0.0;
         }

@@ -241,6 +241,7 @@
             this.buttonRegMånslön.TabIndex = 6;
             this.buttonRegMånslön.Text = "Registrera månadslön";
             this.buttonRegMånslön.UseVisualStyleBackColor = true;
+            this.buttonRegMånslön.Click += new System.EventHandler(this.buttonRegMånslön_Click);
             // 
             // textBoxMånadslön
             // 
@@ -311,6 +312,7 @@
             this.buttonBeräknaLöner.TabIndex = 7;
             this.buttonBeräknaLöner.Text = "Beräkna löner";
             this.buttonBeräknaLöner.UseVisualStyleBackColor = true;
+            this.buttonBeräknaLöner.Click += new System.EventHandler(this.buttonBeräknaLöner_Click);
             // 
             // labelTotalLönekostnad
             // 
