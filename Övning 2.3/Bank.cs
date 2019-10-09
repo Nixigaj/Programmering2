@@ -31,39 +31,39 @@
 
     class SparKonto : BankKonto
     {
-        public SparKonto(string pn) : base(pn)
-        {
+        public SparKonto(string pn, double rs) : base(pn, rs) { }
 
-        }
-
-        public SparKonto(string pn, double rs) : base(pn, rs)
-        {
-
-        }
+        public SparKonto(string pn) : base(pn) { }
 
         public override double beräknaRänta()
         {
-            throw new System.NotImplementedException();
+            return behållning + (behållning * ränteSats);
         }
 
         public override void insättning(double belopp)
         {
-            throw new System.NotImplementedException();
+            behållning += belopp;
         }
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return "Sparkonto: " + personNummer + ": " + behållning;
         }
 
         public override bool Uttag(double belopp)
         {
-            throw new System.NotImplementedException();
+            if (behållning - belopp >= 0)
+            {
+                behållning -= belopp;
+                return true;
+            }
+
+            else return false;
         }
     }
 
     class LåneKonto
     {
-
+        
     }
 }
