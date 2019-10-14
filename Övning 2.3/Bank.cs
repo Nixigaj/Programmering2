@@ -1,11 +1,13 @@
-﻿namespace Övning_2._3
+﻿using System;
+
+namespace Övning_2._3
 {
     class Bank
     {
 
     }
 
-    abstract class BankKonto
+    abstract class BankKonto : IComparable
     {
         protected string personNummer;
         protected double behållning;
@@ -27,6 +29,19 @@
         public abstract bool Uttag(double belopp);
         public abstract double beräknaRänta();
         public abstract override string ToString();
+
+        public int CompareTo(object obj)
+        {
+            BankKonto other = (BankKonto)obj;
+
+            if(this.Behållning > other.Behållning) return 1;
+            else if(this.Behållning == other.Behållning)
+            {
+                if (this.ränteSats > other.ränteSats) return 1;
+                else return -1;
+            }
+            else return -1;
+        }
     }
 
     class SparKonto : BankKonto
