@@ -6,7 +6,7 @@ namespace Övning_2._5
     {
         static void Main(string[] args)
         {
-
+            
         }
     }
 }

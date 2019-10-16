@@ -1,8 +1,4 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Text;
-
-namespace Övning_2._5
+﻿namespace Övning_2._5
 {
     public class Samling<T>
     {
@@ -16,11 +12,11 @@ namespace Övning_2._5
         {
             buffert = 30;
             antal = 0;
-            längd = 30;
+            längd = buffert;
             lista = new T[längd];
         }
 
-        protected void Expandera (int storlek)
+        protected void Expandera(int storlek)
         {
             if (storlek < 1) return;
 
@@ -46,7 +42,7 @@ namespace Övning_2._5
             längd = antal;
         }
 
-        public void LäggTill (T e)
+        public void LäggTill(T e)
         {
             // Skaffa fler platse om det behövs.
             if (antal + 1 > längd) Expandera(1 + buffert);
@@ -54,7 +50,7 @@ namespace Övning_2._5
             lista[antal++] = e;
         }
 
-        public T TaBort (int index)
+        public T TaBort(int index)
         {
             T temp = lista[index];
 
@@ -71,5 +67,37 @@ namespace Övning_2._5
 
             return temp;
         }
+
+        // 1
+        public int Antal() { return antal; }
+
+        // 2
+        public T ElementFrån(int index) { return lista[index]; }
+
+        // 3
+        public bool Har(T värde)
+        {
+            for (int i = 0; i < antal; i++)
+            {
+                if (värde.Equals(lista[i])) return true;
+            }
+
+            return false;
+        }
+
+        // 4
+        public int Sök(T värde)
+        {
+            for (int i = 0; i < antal; i++)
+            {
+                if (värde.Equals(lista[i])) return i;
+            }
+
+            return -1;
+        }
+
+        // 5
+
+        // Coming soon 😳😳😳
     }
 }
