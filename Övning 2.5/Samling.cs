@@ -97,7 +97,17 @@
         }
 
         // 5
+        public void LäggTill(Samling<T> samling)
+        {
+            while(samling.antal + antal > längd)
+            {
+                Expandera(buffert);
+            }
 
-        // Coming soon 😳😳😳
+            for (int i = 0; i < samling.antal; i++)
+            {
+                lista[antal - 1 + i] = samling.lista[i];
+            }
+        }
     }
 }
