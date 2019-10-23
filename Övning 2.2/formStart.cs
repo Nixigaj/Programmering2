@@ -24,6 +24,8 @@ namespace Övning_2._2
                 ));
 
             uppdateraRegister();
+
+            
         } 
         private void ButtonRegArbetspass_Click(object sender, EventArgs e)
         {
