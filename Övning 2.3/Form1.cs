@@ -15,5 +15,10 @@ namespace Övning_2._3
         {
 
         }
+
+        private void ButtonSorteraKonton_Click(object sender, EventArgs e)
+        {
+            // Här ska vi sortera bankos 
+        }
     }
 }

@@ -1,11 +1,13 @@
-﻿namespace Övning_2._3
+﻿using System;
+
+namespace Övning_2._3
 {
     class Bank
     {
 
     }
 
-    abstract class BankKonto
+    abstract class BankKonto : IComparable
     {
         protected string personNummer;
         protected double behållning;
@@ -27,43 +29,56 @@
         public abstract bool Uttag(double belopp);
         public abstract double beräknaRänta();
         public abstract override string ToString();
+
+        public int CompareTo(object obj)
+        {
+            BankKonto other = (BankKonto)obj;
+
+            if(this.Behållning > other.Behållning) return 1;
+            else if(this.Behållning == other.Behållning)
+            {
+                if (this.ränteSats > other.ränteSats) return 1;
+                else return -1;
+            }
+            else return -1;
+        }
     }
 
     class SparKonto : BankKonto
     {
-        public SparKonto(string pn) : base(pn)
-        {
+        public SparKonto(string pn, double rs) : base(pn, rs) { }
 
-        }
-
-        public SparKonto(string pn, double rs) : base(pn, rs)
-        {
-
-        }
+        public SparKonto(string pn) : base(pn) { }
 
         public override double beräknaRänta()
         {
-            throw new System.NotImplementedException();
+            return behållning + (behållning * ränteSats);
         }
 
         public override void insättning(double belopp)
         {
-            throw new System.NotImplementedException();
+            behållning += belopp;
         }
 
         public override string ToString()
         {
-            throw new System.NotImplementedException();
+            return "Sparkonto: " + personNummer + ": " + behållning;
         }
 
         public override bool Uttag(double belopp)
         {
-            throw new System.NotImplementedException();
+            if (behållning - belopp >= 0)
+            {
+                behållning -= belopp;
+                return true;
+            }
+
+            else return false;
         }
     }
 
     class LåneKonto
     {
-
+        
     }
 }

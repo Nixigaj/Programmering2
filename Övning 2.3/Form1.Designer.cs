@@ -43,6 +43,7 @@
             this.label2 = new System.Windows.Forms.Label();
             this.listBox1 = new System.Windows.Forms.ListBox();
             this.button2 = new System.Windows.Forms.Button();
+            this.buttonSorteraKonton = new System.Windows.Forms.Button();
             this.groupBox1.SuspendLayout();
             this.groupBox2.SuspendLayout();
             this.SuspendLayout();
@@ -185,11 +186,22 @@
             this.button2.Text = "Uppdatera med årsränta";
             this.button2.UseVisualStyleBackColor = true;
             // 
+            // buttonSorteraKonton
+            // 
+            this.buttonSorteraKonton.Location = new System.Drawing.Point(378, 147);
+            this.buttonSorteraKonton.Name = "buttonSorteraKonton";
+            this.buttonSorteraKonton.Size = new System.Drawing.Size(265, 36);
+            this.buttonSorteraKonton.TabIndex = 4;
+            this.buttonSorteraKonton.Text = "Sortera konton";
+            this.buttonSorteraKonton.UseVisualStyleBackColor = true;
+            this.buttonSorteraKonton.Click += new System.EventHandler(this.ButtonSorteraKonton_Click);
+            // 
             // FormStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(654, 153);
+            this.ClientSize = new System.Drawing.Size(654, 237);
+            this.Controls.Add(this.buttonSorteraKonton);
             this.Controls.Add(this.button2);
             this.Controls.Add(this.listBox1);
             this.Controls.Add(this.groupBox2);
@@ -221,6 +233,7 @@
         private System.Windows.Forms.TextBox textBox4;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.Button buttonSorteraKonton;
     }
 }
 
