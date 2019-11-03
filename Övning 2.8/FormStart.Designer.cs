@@ -30,7 +30,7 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormStart));
             this.listViewInköpslista = new System.Windows.Forms.ListView();
-            this.columnHeaderAntal = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
+            this.columnHeaderMängd = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderVara = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderTyp = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
             this.columnHeaderEnkelpris = ((System.Windows.Forms.ColumnHeader)(new System.Windows.Forms.ColumnHeader()));
@@ -47,6 +47,7 @@
             this.textBoxVara = new System.Windows.Forms.TextBox();
             this.numericUpDownMängd = new System.Windows.Forms.NumericUpDown();
             this.numericUpDownPris = new System.Windows.Forms.NumericUpDown();
+            this.buttonSortera = new System.Windows.Forms.Button();
             this.groupBoxVarutyp.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownMängd)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.numericUpDownPris)).BeginInit();
@@ -58,7 +59,7 @@
             | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
             this.listViewInköpslista.Columns.AddRange(new System.Windows.Forms.ColumnHeader[] {
-            this.columnHeaderAntal,
+            this.columnHeaderMängd,
             this.columnHeaderVara,
             this.columnHeaderTyp,
             this.columnHeaderEnkelpris,
@@ -68,15 +69,15 @@
             this.listViewInköpslista.Location = new System.Drawing.Point(219, 19);
             this.listViewInköpslista.Margin = new System.Windows.Forms.Padding(4);
             this.listViewInköpslista.Name = "listViewInköpslista";
-            this.listViewInköpslista.Size = new System.Drawing.Size(459, 631);
+            this.listViewInköpslista.Size = new System.Drawing.Size(556, 631);
             this.listViewInköpslista.TabIndex = 0;
             this.listViewInköpslista.UseCompatibleStateImageBehavior = false;
             this.listViewInköpslista.View = System.Windows.Forms.View.Details;
             // 
-            // columnHeaderAntal
+            // columnHeaderMängd
             // 
-            this.columnHeaderAntal.Text = "Antal";
-            this.columnHeaderAntal.Width = 63;
+            this.columnHeaderMängd.Text = "Mängd";
+            this.columnHeaderMängd.Width = 63;
             // 
             // columnHeaderVara
             // 
@@ -91,12 +92,12 @@
             // columnHeaderEnkelpris
             // 
             this.columnHeaderEnkelpris.Text = "Enkelpris";
-            this.columnHeaderEnkelpris.Width = 73;
+            this.columnHeaderEnkelpris.Width = 120;
             // 
             // columnHeaderPris
             // 
             this.columnHeaderPris.Text = "Pris";
-            this.columnHeaderPris.Width = 69;
+            this.columnHeaderPris.Width = 119;
             // 
             // labelVara
             // 
@@ -182,13 +183,14 @@
             this.buttonLäggTill.TabIndex = 5;
             this.buttonLäggTill.Text = "Lägg till";
             this.buttonLäggTill.UseVisualStyleBackColor = true;
+            this.buttonLäggTill.Click += new System.EventHandler(this.buttonLäggTill_Click);
             // 
             // labelSumma
             // 
             this.labelSumma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.labelSumma.AutoSize = true;
             this.labelSumma.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.labelSumma.Location = new System.Drawing.Point(454, 664);
+            this.labelSumma.Location = new System.Drawing.Point(551, 664);
             this.labelSumma.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.labelSumma.Name = "labelSumma";
             this.labelSumma.Size = new System.Drawing.Size(88, 20);
@@ -199,7 +201,7 @@
             // 
             this.textBoxSumma.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.textBoxSumma.Font = new System.Drawing.Font("Segoe UI", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBoxSumma.Location = new System.Drawing.Point(546, 660);
+            this.textBoxSumma.Location = new System.Drawing.Point(643, 660);
             this.textBoxSumma.Margin = new System.Windows.Forms.Padding(4);
             this.textBoxSumma.Name = "textBoxSumma";
             this.textBoxSumma.ReadOnly = true;
@@ -217,9 +219,10 @@
             // 
             // numericUpDownMängd
             // 
+            this.numericUpDownMängd.DecimalPlaces = 2;
             this.numericUpDownMängd.Location = new System.Drawing.Point(77, 99);
             this.numericUpDownMängd.Maximum = new decimal(new int[] {
-            999,
+            1000,
             0,
             0,
             0});
@@ -229,9 +232,10 @@
             // 
             // numericUpDownPris
             // 
+            this.numericUpDownPris.DecimalPlaces = 2;
             this.numericUpDownPris.Location = new System.Drawing.Point(77, 59);
             this.numericUpDownPris.Maximum = new decimal(new int[] {
-            999,
+            1000,
             0,
             0,
             0});
@@ -239,11 +243,23 @@
             this.numericUpDownPris.Size = new System.Drawing.Size(132, 27);
             this.numericUpDownPris.TabIndex = 12;
             // 
+            // buttonSortera
+            // 
+            this.buttonSortera.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.buttonSortera.Location = new System.Drawing.Point(218, 656);
+            this.buttonSortera.Name = "buttonSortera";
+            this.buttonSortera.Size = new System.Drawing.Size(128, 36);
+            this.buttonSortera.TabIndex = 13;
+            this.buttonSortera.Text = "Sortera efter pris";
+            this.buttonSortera.UseVisualStyleBackColor = true;
+            this.buttonSortera.Click += new System.EventHandler(this.buttonSortera_Click);
+            // 
             // FormStart
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 20F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(695, 709);
+            this.ClientSize = new System.Drawing.Size(792, 709);
+            this.Controls.Add(this.buttonSortera);
             this.Controls.Add(this.numericUpDownPris);
             this.Controls.Add(this.numericUpDownMängd);
             this.Controls.Add(this.textBoxVara);
@@ -283,13 +299,14 @@
         private System.Windows.Forms.Label labelSumma;
         private System.Windows.Forms.TextBox textBoxSumma;
         private System.Windows.Forms.TextBox textBoxVara;
-        private System.Windows.Forms.ColumnHeader columnHeaderAntal;
+        private System.Windows.Forms.ColumnHeader columnHeaderMängd;
         private System.Windows.Forms.ColumnHeader columnHeaderVara;
         private System.Windows.Forms.ColumnHeader columnHeaderTyp;
         private System.Windows.Forms.ColumnHeader columnHeaderEnkelpris;
         private System.Windows.Forms.ColumnHeader columnHeaderPris;
         private System.Windows.Forms.NumericUpDown numericUpDownMängd;
         private System.Windows.Forms.NumericUpDown numericUpDownPris;
+        private System.Windows.Forms.Button buttonSortera;
     }
 }
 

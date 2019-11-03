@@ -28,6 +28,7 @@ namespace Övning_2._8
 
             // Använder objektens implementerade BeräknaPris-metoder
             if (this.BeräknaPris() > annan.BeräknaPris()) return 1;
+            else if (this.BeräknaPris() == annan.BeräknaPris()) return 0;
             else return -1;
         }
     }
