@@ -1,58 +1,101 @@
-﻿namespace Övning_2._8
+﻿using System;
+
+namespace Övning_2._8
 {
-    abstract class Vara
+    // Klassen har sortering implementerad
+    abstract class Vara : IComparable
     {
         protected string namn;
 
+        // Namn ska vara gemensamt och kunna anropas på alla instanser av Vara
         public Vara(string n)
         {
-            this.namn = n;
+            namn = n;
         }
 
-        public string Namn() { return this.namn; }
+        public string Namn() { return namn; }
 
-        abstract public double BeräknaPris();
+        // Alla ärvande klasser kan sortera på pris eftersom att BeräknaPris() måste implementeras
+        public abstract double BeräknaPris();
+
+        // Retunerar de olika värdena som strängar
+        public abstract string[] GetValues();
+
+        public int CompareTo(object obj)
+        {
+            // Tar in det externa objektet som ska undersökas
+            Vara annan = (Vara)obj;
+
+            // Använder objektens implementerade BeräknaPris-metoder
+            if (this.BeräknaPris() > annan.BeräknaPris()) return 1;
+            else return -1;
+        }
     }
 
-    class LösVikt : Vara
+
+    sealed class LösVikt : Vara
     {
-        protected double kiloPris;
-        protected double vikt;
+        // Enheten för vikt är kilogram
+        private double kiloPris;
+        private double vikt;
 
         public LösVikt(string n, double p, double v) : base(n)
         {
-            this.namn = n;
-            this.kiloPris = p;
-            this.vikt = v;
+            namn = n;
+            kiloPris = p;
+            vikt = v;
         }
 
-        public double KiloPris() { return this.kiloPris; }
-        public double Vikt() { return this.vikt; }
+        public double KiloPris() { return kiloPris; }
+        public double Vikt() { return vikt; }
+
+        public override double BeräknaPris()
+        {
+            return vikt * kiloPris;
+        }
+
+        public override string[] GetValues()
+        {
+            return new string[]
+            {
+                vikt.ToString() + " kg",
+                namn,
+                "Lösvikt",
+                kiloPris.ToString() + " kr/kg",
+                Convert.ToString(BeräknaPris()) + " kr"
+            };
+        }
+    }
+
+    sealed class StyckSak : Vara
+    {
+        private double styckPris;
+        private int antal;
+
+        public StyckSak(string n, double p, int a) : base(n)
+        {
+            namn = n;
+            styckPris = p;
+            antal = a;
+        }
+
+        public double StyckPris() { return styckPris; }
 
         override public double BeräknaPris()
         {
-            return this.vikt * this.kiloPris;
+            return antal * styckPris;
         }
 
-        class StyckSak : Vara
+        public override string[] GetValues()
         {
-            protected double styckPris;
-            protected int antal;
-
-            public StyckSak(string n, double p, int a) : base(n)
+            return new string[]
             {
-                this.namn = n;
-                this.styckPris = p;
-                this.antal = a;
-            }
-
-            public double KiloPris() { return this.styckPris; }
-            public int Vikt() { return this.antal; }
-
-            override public double BeräknaPris()
-            {
-                return this.antal * this.styckPris;
-            }
+                antal.ToString() + " st.",
+                namn,
+                "Styckvara",
+                styckPris.ToString() + " kr/st",
+                Convert.ToString(BeräknaPris()) + " kr"
+            };
         }
     }
 }

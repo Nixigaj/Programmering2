@@ -8,7 +8,5 @@ namespace Övning_2._8
         {
             InitializeComponent();
         }
-
-        
     }
 }
