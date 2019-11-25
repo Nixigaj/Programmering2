@@ -7,6 +7,7 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Microsoft.Xna.Framework.Media;
+using SpaceShooter.Entities;
 
 namespace SpaceShooter
 {
@@ -17,10 +18,7 @@ namespace SpaceShooter
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
-        Texture2D ship_texture;
-        Vector2 ship_vector;
-        Vector2 ship_speed;
-        float boostValue;
+        Player player;
         Color backgroundColor;
 
         public Game1()
@@ -46,11 +44,6 @@ namespace SpaceShooter
         protected override void Initialize()
         {
             // TODO: Add your initialization logic here
-            ship_vector.X = 380;
-            ship_vector.Y = 400;
-            ship_speed.X = 6.0f;
-            ship_speed.Y = 6.0f;
-            boostValue = 8.0f;
             backgroundColor = new Color(25 / 255.0f, 0 / 255.0f, 50 / 255.0f);
             base.Initialize();
         }
@@ -64,7 +57,7 @@ namespace SpaceShooter
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            ship_texture = Content.Load<Texture2D>("player/ship");
+            player = new Player(Content.Load<Texture2D>("player/ship"), 380, 400, 6.0f, 6.0f, 8.0f);
 
             // TODO: use this.Content to load your game content here
         }
@@ -90,41 +83,7 @@ namespace SpaceShooter
 
             // TODO: Add your update logic here
 
-            KeyboardState keyboardState = Keyboard.GetState();
-
-            if (ship_vector.X <= Window.ClientBounds.Width - ship_texture.Width && ship_vector.X >= 0)
-            {
-                if (keyboardState.IsKeyDown(Keys.D))
-                {
-                    if (keyboardState.IsKeyDown(Keys.LeftShift)) ship_vector.X += ship_speed.X + boostValue;
-                    else ship_vector.X += ship_speed.X;
-                }
-                if (keyboardState.IsKeyDown(Keys.A))
-                {
-                    if (keyboardState.IsKeyDown(Keys.LeftShift)) ship_vector.X -= ship_speed.X + boostValue;
-                    else ship_vector.X -= ship_speed.X;
-                }
-            }
-
-            if (ship_vector.Y <= Window.ClientBounds.Height - ship_texture.Height && ship_vector.Y >= 0)
-            {
-                if (keyboardState.IsKeyDown(Keys.S))
-                {
-                    if (keyboardState.IsKeyDown(Keys.LeftShift)) ship_vector.Y += ship_speed.Y + boostValue;
-                    else ship_vector.Y += ship_speed.Y;
-                }
-                if (keyboardState.IsKeyDown(Keys.W))
-                {
-                    if (keyboardState.IsKeyDown(Keys.LeftShift)) ship_vector.Y -= ship_speed.Y + boostValue;
-                    else ship_vector.Y -= ship_speed.Y;
-                }
-            }
-
-            if (ship_vector.X < 0) ship_vector.X = 0;
-            if (ship_vector.X > Window.ClientBounds.Width - ship_texture.Width) ship_vector.X = Window.ClientBounds.Width - ship_texture.Width;
-
-            if (ship_vector.Y < 0) ship_vector.Y = 0;
-            if (ship_vector.Y > Window.ClientBounds.Height - ship_texture.Height) ship_vector.Y = Window.ClientBounds.Height - ship_texture.Height;
+            player.Update(Window);
 
             base.Update(gameTime);
         }
@@ -140,20 +99,12 @@ namespace SpaceShooter
             if (!Keyboard.GetState().IsKeyDown(Keys.Space)) GraphicsDevice.Clear(backgroundColor);
 
             spriteBatch.Begin();   // Starta "bildUppritaren"
-            spriteBatch.Draw(ship_texture, ship_vector, Color.White);
+            player.Draw(spriteBatch);
             spriteBatch.End();  // Stäng av "bildUppritaren"
 
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
-        }
-
-        /// <summary>
-        /// Gets an array of colors for a Top Down Gradient.
-        /// </summary>
-        /// <param name="width">The width of the color array.</param>
-        /// <param name="height">The height of the color array.</param>
-        /// <returns>Color Array.</returns>
-        
+        } 
     }
 }

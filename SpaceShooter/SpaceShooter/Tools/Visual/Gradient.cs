@@ -12,6 +12,12 @@ namespace SpaceShooter.Tools.Visual
 {
     class Gradient
     {
+        /// <summary>
+        /// Gets an array of colors for a Top Down Gradient.
+        /// </summary>
+        /// <param name="width">The width of the color array.</param>
+        /// <param name="height">The height of the color array.</param>
+        /// <returns>Color Array.</returns>
         private static Color[] GetGradientColors(uint width, uint height)
         {
             //Declare variables
