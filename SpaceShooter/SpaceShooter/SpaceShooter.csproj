@@ -40,10 +40,11 @@
   <ItemGroup>
     <Compile Include="Abstract objects\GameObject.cs" />
     <Compile Include="Abstract objects\MovingObject.cs" />
-    <Compile Include="Entities\Player.cs" />
+    <Compile Include="Entities\Player\Player.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\Interfaces\IPoints.cs" />
     <Compile Include="Tools\Visual\Gradient.cs" />
   </ItemGroup>
   <ItemGroup>
