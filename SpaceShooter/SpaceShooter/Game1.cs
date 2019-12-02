@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using SpaceShooter.Entities;
+using SpaceShooter.Tools.Visual;
 
 namespace SpaceShooter
 {
@@ -13,6 +14,7 @@ namespace SpaceShooter
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
         Player player;
+        PrintText printText;
         Color backgroundColor;
 
         public Game1()
@@ -21,10 +23,12 @@ namespace SpaceShooter
 
             this.IsMouseVisible = true;
 
+            /*
             graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;  // set this value to the desired width of your window
             graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;   // set this value to the desired height of your window
             graphics.IsFullScreen = true;
             graphics.ApplyChanges();
+            */
 
             Content.RootDirectory = "Content";
         }
@@ -52,6 +56,7 @@ namespace SpaceShooter
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             player = new Player(Content.Load<Texture2D>("player/ship"), 380, 400, 6.0f, 6.0f, 8.0f);
+            printText = new PrintText(Content.Load<SpriteFont>("myFont"));
 
             // TODO: use this.Content to load your game content here
         }
@@ -94,6 +99,7 @@ namespace SpaceShooter
 
             spriteBatch.Begin();   // Starta "bildUppritaren"
             player.Draw(spriteBatch);
+            printText.Print("testutskrift", spriteBatch, 0, 0);
             spriteBatch.End();  // Stäng av "bildUppritaren"
 
             // TODO: Add your drawing code here
