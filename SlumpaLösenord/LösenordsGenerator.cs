@@ -1,22 +1,21 @@
 ﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SlumpaLösenord
 {
-    class LösenordsGenerator
+    static class LösenordsGenerator
     {
-        Random random = new Random();
+        static Random random = new Random();
 
         public static string Generera()
         {
-            return SlumpadLitenBokstav();
-            
+            // "Det där är det värsta jag sett" /Måns
+            return
+                SlumpadLitenBokstav().ToString() + SlumpadLitenBokstav().ToString() + SlumpadLitenBokstav().ToString() +
+                random.Next(0,10).ToString() + random.Next(0, 10).ToString() + random.Next(0, 10).ToString() +
+                SlumpadStorBokstav() + SlumpadStorBokstav() + SlumpadStorBokstav();
         }
 
-        private static string SlumpadLitenBokstav()
+        private static char SlumpadLitenBokstav()
         {
             return (char) random.Next(97, 123);
         }

@@ -1,8 +1,5 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace SlumpaLösenord
 {
@@ -30,7 +27,14 @@ namespace SlumpaLösenord
         {
             Sammanställ();
 
+            System.IO.StreamWriter writer = new System.IO.StreamWriter("../../okrypterade inloggnisuppgifter.txt");
 
+            foreach (string uppgift in allaInloggningar)
+            {
+                writer.WriteLine(uppgift);
+            }
+
+            writer.Close();
         }
 
         public List<string> GetValues()
