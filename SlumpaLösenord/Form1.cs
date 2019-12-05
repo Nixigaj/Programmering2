@@ -5,7 +5,7 @@ namespace SlumpaLösenord
 {
     public partial class FormStart : Form
     {
-        private Inloggningar inloggningar = new Inloggningar("filväg");
+        private Inloggningar inloggningar = new Inloggningar("../../okrypterade inloggnisuppgifter.txt");
 
         public FormStart()
         {

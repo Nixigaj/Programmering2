@@ -27,7 +27,7 @@ namespace SlumpaLösenord
         {
             Sammanställ();
 
-            System.IO.StreamWriter writer = new System.IO.StreamWriter("../../okrypterade inloggnisuppgifter.txt");
+            System.IO.StreamWriter writer = new System.IO.StreamWriter(filväg);
 
             foreach (string uppgift in allaInloggningar)
             {
