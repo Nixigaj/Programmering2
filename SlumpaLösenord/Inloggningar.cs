@@ -61,5 +61,28 @@ namespace SlumpaLösenord
         {
             return allaLösenord[allaLösenord.Count - 1];
         }
+
+        private void läsFrånFil()
+        {
+            Sammanställ();
+
+            string[] temp;
+            System.IO.StreamReader reader = new System.IO.StreamReader(filväg);
+
+            reader.ReadLine();
+
+            while (!reader.EndOfStream)
+            {
+                temp = reader.ReadLine().Split('\t');
+
+            }
+            reader.Close();
+
+            
+
+            
+
+            
+        }
     }
 }
