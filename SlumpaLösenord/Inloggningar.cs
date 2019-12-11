@@ -74,15 +74,8 @@ namespace SlumpaLösenord
             while (!reader.EndOfStream)
             {
                 temp = reader.ReadLine().Split('\t');
-
             }
             reader.Close();
-
-            
-
-            
-
-            
         }
     }
 }

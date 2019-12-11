@@ -8,5 +8,6 @@ namespace SpaceShooter.Tools.Visual
 {
     class RecrusiveTexture
     {
+
     }
 }
