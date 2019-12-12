@@ -22,37 +22,37 @@ namespace ThreadingTest
             t5.Start();
             t6.Start();
 
-            StreamWriter sw = new StreamWriter(@"../../writeTest\a.txt");
+            StreamWriter sw = new StreamWriter(@"C:\Users\erjun_01.SOLNET\Documents\dase\a.txt");
             for (; ; ) sw.WriteLine("a");
         }
 
         static void second()
         {
-            StreamWriter sw = new StreamWriter(@"../../writeTest\b.txt");
+            StreamWriter sw = new StreamWriter(@"C:\Users\erjun_01.SOLNET\Documents\dase\b.txt");
             for (; ; ) sw.WriteLine("b");
         }
 
         static void third()
         {
-            StreamWriter sw = new StreamWriter(@"../../writeTest\c.txt");
+            StreamWriter sw = new StreamWriter(@"C:\Users\erjun_01.SOLNET\Documents\dase\c.txt");
             for (; ; ) sw.WriteLine("c");
         }
 
         static void forth()
         {
-            StreamWriter sw = new StreamWriter(@"../../writeTest\d.txt");
+            StreamWriter sw = new StreamWriter(@"C:\Users\erjun_01.SOLNET\Documents\dase\d.txt");
             for (; ; ) sw.WriteLine("d");
         }
 
         static void fifth()
         {
-            StreamWriter sw = new StreamWriter(@"../../writeTest\e.txt");
+            StreamWriter sw = new StreamWriter(@"C:\Users\erjun_01.SOLNET\Documents\dase\e.txt");
             for (; ; ) sw.WriteLine("e");
         }
 
         static void sixth()
         {
-            StreamWriter sw = new StreamWriter(@"../../writeTest\f.txt");
+            StreamWriter sw = new StreamWriter(@"C:\Users\erjun_01.SOLNET\Documents\dase\f.txt");
             for (; ; ) sw.WriteLine("f");
         }
     }

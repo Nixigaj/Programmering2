@@ -23,12 +23,12 @@ namespace SpaceShooter
 
             this.IsMouseVisible = true;
 
-            /*
+            
             graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;  // set this value to the desired width of your window
             graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;   // set this value to the desired height of your window
             graphics.IsFullScreen = true;
             graphics.ApplyChanges();
-            */
+            
 
             Content.RootDirectory = "Content";
         }
