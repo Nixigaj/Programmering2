@@ -50,6 +50,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\worn_stone.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

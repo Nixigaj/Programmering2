@@ -16,8 +16,6 @@ namespace Spelprojekt
         {
             this.IsMouseVisible = true;
 
-            
-
             graphics = new GraphicsDeviceManager(this);
 
             graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;  // set this value to the desired width of your window
