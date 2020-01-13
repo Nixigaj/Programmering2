@@ -38,6 +38,9 @@
     <ApplicationIcon>Icon.ico</ApplicationIcon>
   </PropertyGroup>
   <ItemGroup>
+    <Compile Include="Abstract objects\GameObject.cs" />
+    <Compile Include="Abstract objects\MovingObject.cs" />
+    <Compile Include="Background\RecrusiveTexture.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -51,14 +54,16 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Content\worn_stone.png" />
+    <Content Include="Content\RecrusiveTextures\tappar.png" />
+    <Content Include="Content\RecrusiveTextures\topAndBottom.png" />
+    <Content Include="Content\RecrusiveTextures\worn_stone.png" />
+    <Content Include="Content\RecrusiveTextures\worn_stone2.png" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>
     <MonoGameContentReference Include="Content\Content.mgcb" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Background\" />
     <Folder Include="Tools\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

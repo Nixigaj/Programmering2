@@ -8,5 +8,6 @@ namespace Spelprojekt.Visual
 {
     class MotionBlur
     {
+
     }
 }
