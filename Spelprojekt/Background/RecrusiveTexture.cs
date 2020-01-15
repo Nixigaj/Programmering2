@@ -6,32 +6,49 @@ using System.Collections.Generic;
 
 namespace Spelprojekt.Background
 {
-    class RecrusiveTexture
+    class RecrusiveTexture : MovingObject
     {
         // Hur många paneler som ska ritas ut
-        private int panelAmount;
+        private int iterationsX;
         // När nästa rad av texturer ska ritas
-        private int lineInterval;
+        private int iterationsY;
 
         // Lista på alla moving objects som ska ritas ut
         private List<MovingObject> panels;
 
-        public RecrusiveTexture(Texture2D texture, float X, float Y, float speedX, float speedY, int iterationsX, int iterationsY)
+        public RecrusiveTexture(Texture2D texture, float X, float Y, float speedX, float speedY,)
         {
-            lineInterval = iterationsX;
-            panelAmount = iterationsX * iterationsY;
-
-            for ()
+            
+            
         }
 
-        public void Update(GameWindow window)
+        public RecrusiveTexture(Texture2D texture, float X, float Y, float speedX, float speedY, int iterationsX, int iterationsY) : base(texture, X, Y, speedX, speedY)
         {
-            throw new NotImplementedException();
+            this.iterationsX = iterationsX;
+            this.iterationsY = iterationsY;
+
+            for (int i = 0; i < iterationsY; i++)
+            {
+                float offsetY = 0;
+                for (int j = 0; j < iterationsX; j++)
+                {
+                    float offsetX = 0;
+                    panels.Add(new MovingObject(texture, X + offsetX, Y + offsetY, speedX, speedY));
+                    offsetX += texture.Width;
+                }
+                offsetY += texture.Height;
+
+            }
         }
 
-        public virtual void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch)
         {
             spriteBatch.Draw(texture, vector, Color.White);
+        }
+
+        public override void Update(GameWindow window)
+        {
+            throw new NotImplementedException();
         }
 
         public float X { get { return vector.X; } }
