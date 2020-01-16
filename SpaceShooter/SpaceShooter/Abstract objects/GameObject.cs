@@ -3,7 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 
 namespace SpaceShooter.Abstract_objects
 {
-    abstract class GameObject
+    abstract class GameObject : IUpdate
     {
         protected Texture2D texture;
         protected Vector2 vector;
@@ -15,7 +15,7 @@ namespace SpaceShooter.Abstract_objects
             vector.Y = Y;
         }
 
-        public abstract void Update(GameWindow window);
+        public virtual void Update(GameWindow window) { }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
@@ -26,5 +26,10 @@ namespace SpaceShooter.Abstract_objects
         public float Y { get { return vector.Y; } }
         public float Width { get { return texture.Width; } }
         public float Height { get { return texture.Height; } }
+    }
+
+    public interface IUpdate
+    {
+        void Update(GameWindow window);
     }
 }

@@ -6,25 +6,30 @@ namespace Spelprojekt.Abstract_objects
     abstract class GameObject
     {
         protected Texture2D texture;
-        protected Vector2 vector;
+        protected Vector2 position;
 
         public GameObject(Texture2D texture, float X, float Y)
         {
             this.texture = texture;
-            vector.X = X;
-            vector.Y = Y;
+            position.X = X;
+            position.Y = Y;
         }
 
-        public abstract void Update(GameWindow window);
+        public virtual void Update(GameWindow window) { }
 
         public virtual void Draw(SpriteBatch spriteBatch)
         {
-            spriteBatch.Draw(texture, vector, Color.White);
+            spriteBatch.Draw(texture, position, Color.White);
         }
 
-        public float X { get { return vector.X; } }
-        public float Y { get { return vector.Y; } }
-        public float Width { get { return texture.Width; } }
-        public float Height { get { return texture.Height; } }
+        public virtual float X { get { return position.X; } }
+        public virtual float Y { get { return position.Y; } }
+        public virtual float Width { get { return texture.Width; } }
+        public virtual float Height { get { return texture.Height; } }
+    }
+
+    public interface IUpdate
+    {
+        void Update(GameWindow window);
     }
 }

@@ -16,16 +16,17 @@ namespace Spelprojekt.Background
         // Lista på alla moving objects som ska ritas ut
         private List<MovingObject> panels;
 
-        public RecrusiveTexture(Texture2D texture, float X, float Y, float speedX, float speedY,)
-        {
-            
-            
-        }
-
         public RecrusiveTexture(Texture2D texture, float X, float Y, float speedX, float speedY, int iterationsX, int iterationsY) : base(texture, X, Y, speedX, speedY)
         {
             this.iterationsX = iterationsX;
             this.iterationsY = iterationsY;
+
+
+        }
+
+        public override void Draw(SpriteBatch spriteBatch)
+        {
+            
 
             for (int i = 0; i < iterationsY; i++)
             {
@@ -33,27 +34,21 @@ namespace Spelprojekt.Background
                 for (int j = 0; j < iterationsX; j++)
                 {
                     float offsetX = 0;
-                    panels.Add(new MovingObject(texture, X + offsetX, Y + offsetY, speedX, speedY));
+                    spriteBatch.Draw(texture, new Vector2(position.X + offsetX, position.Y + offsetY), Color.White);
                     offsetX += texture.Width;
                 }
                 offsetY += texture.Height;
-
             }
         }
 
-        public override void Draw(SpriteBatch spriteBatch)
-        {
-            spriteBatch.Draw(texture, vector, Color.White);
-        }
-
-        public override void Update(GameWindow window)
+        public void Update(GameWindow window, float speedNudgeX, float speedNudgeY)
         {
             throw new NotImplementedException();
         }
 
-        public float X { get { return vector.X; } }
-        public float Y { get { return vector.Y; } }
-        public float Width { get { return texture.Width; } }
-        public float Height { get { return texture.Height; } }
+        //public override float X { get { return position.X; } }
+        //public override float Y { get { return position.Y; } }
+        public override float Width { get { return texture.Width * iterationsX; } }
+        public override float Height { get { return texture.Height * iterationsY; } }
     }
 }
