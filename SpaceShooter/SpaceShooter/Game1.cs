@@ -54,7 +54,7 @@ namespace SpaceShooter
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
             player = new Player(Content.Load<Texture2D>("player/ship"), 380, 400, 6.0f, 6.0f, 8.0f);
-            printText = new PrintText(Content.Load<SpriteFont>("myFont"));
+            //printText = new PrintText(Content.Load<SpriteFont>("myFont"));
 
             // TODO: use this.Content to load your game content here
         }
@@ -97,7 +97,7 @@ namespace SpaceShooter
 
             spriteBatch.Begin();   // Starta "bildUppritaren"
             player.Draw(spriteBatch);
-            printText.Print("testutskrift", spriteBatch, 0, 0);
+            //printText.Print("testutskrift", spriteBatch, 0, 0);
             spriteBatch.End();  // Stäng av "bildUppritaren"
 
             // TODO: Add your drawing code here

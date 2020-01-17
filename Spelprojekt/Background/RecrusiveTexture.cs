@@ -6,7 +6,7 @@ using System.Collections.Generic;
 
 namespace Spelprojekt.Background
 {
-    class RecrusiveTexture : MovingObject
+    class RecrusiveTexture : GameObject
     {
         // Hur många paneler som ska ritas ut
         private int iterationsX;
@@ -16,18 +16,14 @@ namespace Spelprojekt.Background
         // Lista på alla moving objects som ska ritas ut
         private List<MovingObject> panels;
 
-        public RecrusiveTexture(Texture2D texture, float X, float Y, float speedX, float speedY, int iterationsX, int iterationsY) : base(texture, X, Y, speedX, speedY)
+        public RecrusiveTexture(Texture2D texture, float X, float Y, int iterationsX, int iterationsY) : base(texture, X, Y)
         {
             this.iterationsX = iterationsX;
             this.iterationsY = iterationsY;
-
-
         }
 
         public override void Draw(SpriteBatch spriteBatch)
         {
-            
-
             for (int i = 0; i < iterationsY; i++)
             {
                 float offsetY = 0;
@@ -39,6 +35,11 @@ namespace Spelprojekt.Background
                 }
                 offsetY += texture.Height;
             }
+        }
+
+        public void ApproachSpeed(float frameFactor, float speedX, float speedY)
+        {
+            
         }
 
         public void Update(GameWindow window, float speedNudgeX, float speedNudgeY)
