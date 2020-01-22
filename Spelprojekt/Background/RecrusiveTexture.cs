@@ -24,12 +24,12 @@ namespace Spelprojekt.Background
 
         public override void Draw(SpriteBatch spriteBatch)
         {
+            float offsetY = 0;
             for (int i = 0; i < iterationsY; i++)
             {
-                float offsetY = 0;
+                float offsetX = 0;
                 for (int j = 0; j < iterationsX; j++)
                 {
-                    float offsetX = 0;
                     spriteBatch.Draw(texture, new Vector2(position.X + offsetX, position.Y + offsetY), Color.White);
                     offsetX += texture.Width;
                 }
@@ -44,7 +44,8 @@ namespace Spelprojekt.Background
 
         public void Update(GameWindow window, float speedNudgeX, float speedNudgeY)
         {
-            throw new NotImplementedException();
+            position.X += speedNudgeX;
+            position.Y += speedNudgeY;
         }
 
         //public override float X { get { return position.X; } }

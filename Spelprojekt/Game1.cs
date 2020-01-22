@@ -1,6 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
+using Spelprojekt.Background;
 
 namespace Spelprojekt
 {
@@ -12,6 +13,11 @@ namespace Spelprojekt
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
+        //Egna
+        RecrusiveTexture back1;
+        RecrusiveTexture back2;
+        RecrusiveTexture back3;
+
         public Game1()
         {
             this.IsMouseVisible = true;
@@ -20,7 +26,7 @@ namespace Spelprojekt
 
             graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;  // set this value to the desired width of your window
             graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;   // set this value to the desired height of your window
-            graphics.IsFullScreen = true;
+            //graphics.IsFullScreen = true;
             graphics.ApplyChanges();
             Content.RootDirectory = "Content";
         }
@@ -47,6 +53,10 @@ namespace Spelprojekt
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            back1 = new RecrusiveTexture(Content.Load<Texture2D>("RecrusiveTextures/worn_stone2"), 0f, 0f, 1000, 1);
+            back2 = new RecrusiveTexture(Content.Load<Texture2D>("RecrusiveTextures/tappar"), 0f, 0f, 1000, 1);
+            back3 = new RecrusiveTexture(Content.Load<Texture2D>("RecrusiveTextures/topAndBottom"), 0f, 0f, 1000, 1);
+
             // TODO: use this.Content to load your game content here
         }
 
@@ -69,6 +79,10 @@ namespace Spelprojekt
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
 
+            back1.Update(Window, -2f, 0f);
+            back2.Update(Window, -4f, 0f);
+            back3.Update(Window, -8f, 0f);
+
             // TODO: Add your update logic here
 
             base.Update(gameTime);
@@ -81,6 +95,12 @@ namespace Spelprojekt
         protected override void Draw(GameTime gameTime)
         {
             GraphicsDevice.Clear(Color.CornflowerBlue);
+
+            spriteBatch.Begin();   // Starta "bildUppritaren"
+            back1.Draw(spriteBatch);
+            back2.Draw(spriteBatch);
+            back3.Draw(spriteBatch);
+            spriteBatch.End();  // Stäng av "bildUppritaren"
 
             // TODO: Add your drawing code here
 
