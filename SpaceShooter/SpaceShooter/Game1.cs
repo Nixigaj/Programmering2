@@ -57,6 +57,7 @@ namespace SpaceShooter
             //printText = new PrintText(Content.Load<SpriteFont>("myFont"));
 
             // TODO: use this.Content to load your game content here
+
         }
 
         /// <summary>

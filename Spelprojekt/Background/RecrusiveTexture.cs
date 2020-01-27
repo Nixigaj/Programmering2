@@ -1,20 +1,15 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Spelprojekt.Abstract_objects;
-using System;
 using System.Collections.Generic;
 
 namespace Spelprojekt.Background
 {
     class RecrusiveTexture : GameObject
     {
-        // Hur många paneler som ska ritas ut
+        // Hur många texturer som bredd och höjd
         private int iterationsX;
-        // När nästa rad av texturer ska ritas
         private int iterationsY;
-
-        // Lista på alla moving objects som ska ritas ut
-        private List<MovingObject> panels;
 
         public RecrusiveTexture(Texture2D texture, float X, float Y, int iterationsX, int iterationsY) : base(texture, X, Y)
         {
