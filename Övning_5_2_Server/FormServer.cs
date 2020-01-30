@@ -21,7 +21,7 @@ namespace Övning_5_2_Server
 
         private void buttonTaEmot_Click(object sender, EventArgs e)
         {
-            IPEndPoint klientEndPoint = new IPEndPoint(IPAddress.Any, 0);
+            IPEndPoint klientEndPoint = new IPEndPoint(IPAddress.Parse("127.0.0.1"), Convert.ToInt32(textBoxPort.Text));
             UdpClient client = new UdpClient(Convert.ToInt32(textBoxPort.Text));
             byte[] inström = client.Receive(ref klientEndPoint);
             textBoxData.Text = Encoding.Unicode.GetString(inström);
