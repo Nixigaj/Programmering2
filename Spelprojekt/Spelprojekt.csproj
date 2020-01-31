@@ -42,7 +42,7 @@
     <Compile Include="Abstract objects\MovingObject.cs" />
     <Compile Include="Background\RecrusiveTexture.cs" />
     <Compile Include="Game1.cs" />
-    <Compile Include="Physical\Accelleration.cs" />
+    <Compile Include="Abstract objects\AccellerativeObject.cs" />
     <Compile Include="Physical\Collision.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

@@ -12,7 +12,5 @@ namespace Spelprojekt.Abstract_objects
             speed.X = speedX;
             speed.Y = speedY;
         }
-
-
     }
 }

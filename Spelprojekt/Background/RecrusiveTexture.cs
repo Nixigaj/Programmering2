@@ -1,7 +1,7 @@
 ﻿using Microsoft.Xna.Framework;
 using Microsoft.Xna.Framework.Graphics;
 using Spelprojekt.Abstract_objects;
-using System.Collections.Generic;
+using Spelprojekt.Physical;
 
 namespace Spelprojekt.Background
 {
