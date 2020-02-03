@@ -76,11 +76,13 @@ Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ThreadingTestDiskWrite", "T
 EndProject
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Kapitel 5", "Kapitel 5", "{2A1864DA-9410-40A2-A896-4FD58F67BA6A}"
 EndProject
-Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Övning_5_2", "Övning_5_2", "{FE2481EE-8A78-41E5-83EF-A3178904A648}"
+Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Övning_5_1", "Övning_5_1", "{FE2481EE-8A78-41E5-83EF-A3178904A648}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning_5_2_Server", "Övning_5_2_Server\Övning_5_2_Server.csproj", "{CA0A121E-861E-4FF0-83FE-2EBC3470E49F}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning_5_1_Server", "Övning_5_2_Server\Övning_5_1_Server.csproj", "{CA0A121E-861E-4FF0-83FE-2EBC3470E49F}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning_5_2_Klient", "Övning_5_2_Klient\Övning_5_2_Klient.csproj", "{FDC82076-308D-4928-A829-441DF974D390}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning_5_1_Klient", "Övning_5_2_Klient\Övning_5_1_Klient.csproj", "{FDC82076-308D-4928-A829-441DF974D390}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Övning_5_2", "WindowsFormsApp1\Övning_5_2.csproj", "{CAD02AF3-32E9-48A7-9FED-7C4FC81BA8EF}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -272,6 +274,14 @@ Global
 		{FDC82076-308D-4928-A829-441DF974D390}.Release|Any CPU.Build.0 = Release|Any CPU
 		{FDC82076-308D-4928-A829-441DF974D390}.Release|x86.ActiveCfg = Release|Any CPU
 		{FDC82076-308D-4928-A829-441DF974D390}.Release|x86.Build.0 = Release|Any CPU
+		{CAD02AF3-32E9-48A7-9FED-7C4FC81BA8EF}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{CAD02AF3-32E9-48A7-9FED-7C4FC81BA8EF}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{CAD02AF3-32E9-48A7-9FED-7C4FC81BA8EF}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{CAD02AF3-32E9-48A7-9FED-7C4FC81BA8EF}.Debug|x86.Build.0 = Debug|Any CPU
+		{CAD02AF3-32E9-48A7-9FED-7C4FC81BA8EF}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{CAD02AF3-32E9-48A7-9FED-7C4FC81BA8EF}.Release|Any CPU.Build.0 = Release|Any CPU
+		{CAD02AF3-32E9-48A7-9FED-7C4FC81BA8EF}.Release|x86.ActiveCfg = Release|Any CPU
+		{CAD02AF3-32E9-48A7-9FED-7C4FC81BA8EF}.Release|x86.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -309,6 +319,7 @@ Global
 		{FE2481EE-8A78-41E5-83EF-A3178904A648} = {2A1864DA-9410-40A2-A896-4FD58F67BA6A}
 		{CA0A121E-861E-4FF0-83FE-2EBC3470E49F} = {FE2481EE-8A78-41E5-83EF-A3178904A648}
 		{FDC82076-308D-4928-A829-441DF974D390} = {FE2481EE-8A78-41E5-83EF-A3178904A648}
+		{CAD02AF3-32E9-48A7-9FED-7C4FC81BA8EF} = {2A1864DA-9410-40A2-A896-4FD58F67BA6A}
 	EndGlobalSection
 	GlobalSection(ExtensibilityGlobals) = postSolution
 		SolutionGuid = {153FFE87-D763-4644-BE3D-7C3C49E17D38}
