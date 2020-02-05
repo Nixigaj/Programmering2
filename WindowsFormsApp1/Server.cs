@@ -17,7 +17,7 @@ namespace Övning_5_2
         TcpListener lyssnare;
         TcpClient klient;
         // Hårdkodad port
-        int port = 8080;
+        int port = 12345;
 
         public Server()
         {

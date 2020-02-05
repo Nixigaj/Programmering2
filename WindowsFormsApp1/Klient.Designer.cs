@@ -86,6 +86,7 @@
             this.buttonSkicka.TabIndex = 5;
             this.buttonSkicka.Text = "Skicka";
             this.buttonSkicka.UseVisualStyleBackColor = true;
+            this.buttonSkicka.Click += new System.EventHandler(this.buttonSkicka_Click);
             // 
             // Klient
             // 
