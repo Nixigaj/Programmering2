@@ -25,14 +25,14 @@ namespace Spelprojekt.Abstract_objects
 
         public virtual bool IncrementTexture()
         {
-            if ()
-
+            //if ()
+            return false;
         }
 
         public virtual bool IncrementTexture(int amount)
         {
 
-
+            return false;
         }
 
         public virtual float X { get { return position.X; } }

@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Spelprojekt.Background;
+using System;
 
 namespace Spelprojekt
 {
@@ -12,6 +13,8 @@ namespace Spelprojekt
     {
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
+
+        
 
         //Egna
         RecrusiveTexture back1;
@@ -26,7 +29,7 @@ namespace Spelprojekt
 
             graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;  // set this value to the desired width of your window
             graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;   // set this value to the desired height of your window
-            //graphics.IsFullScreen = true;
+            graphics.IsFullScreen = true;
             graphics.ApplyChanges();
             Content.RootDirectory = "Content";
         }
@@ -53,9 +56,18 @@ namespace Spelprojekt
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            back1 = new RecrusiveTexture(Content.Load<Texture2D>("RecrusiveTextures/worn_stone2"), 0f, 0f, 1000, 1);
-            back2 = new RecrusiveTexture(Content.Load<Texture2D>("RecrusiveTextures/tappar"), 0f, 0f, 1000, 1);
-            back3 = new RecrusiveTexture(Content.Load<Texture2D>("RecrusiveTextures/topAndBottom"), 0f, 0f, 1000, 1);
+            Texture2D[] back = new Texture2D[1];
+            Texture2D[] middle = new Texture2D[1];
+            Texture2D[] front = new Texture2D[1];
+
+            back[0] = Content.Load<Texture2D>("RecrusiveTextures/worn_stone2");
+            middle[0] = Content.Load<Texture2D>("RecrusiveTextures/tappar");
+            front[0] = Content.Load<Texture2D>("RecrusiveTextures/topAndBottom");
+
+
+            back1 = new RecrusiveTexture(back, 0f, 0f, 100, 1);
+            back2 = new RecrusiveTexture(middle, 0f, 0f, 100, 1);
+            back3 = new RecrusiveTexture(front, 0f, 0f, 100, 1);
 
             // TODO: use this.Content to load your game content here
         }
@@ -69,6 +81,10 @@ namespace Spelprojekt
             // TODO: Unload any non ContentManager content here
         }
 
+        float vary = 0;
+        static float maxSpeed = 0.5f;
+        float accelleration = 0.03f * maxSpeed;
+
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -78,13 +94,41 @@ namespace Spelprojekt
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
                 Exit();
+            KeyboardState keyboardState = Keyboard.GetState();
 
-            back1.Update(Window, -2f, 0f);
-            back2.Update(Window, -4f, 0f);
-            back3.Update(Window, -8f, 0f);
+            if (!keyboardState.IsKeyDown(Keys.D) && !keyboardState.IsKeyDown(Keys.A))
+            {
+                if (Math.Abs(vary) < accelleration) vary = 0;
+                else if (vary > 0) vary -= accelleration;
+                else if (vary < 0) vary += accelleration;
+            }
+            else
+            {
+                if (keyboardState.IsKeyDown(Keys.A))
+                {
+                    if (vary < 0) vary += accelleration * 4;
+                    else if (vary < maxSpeed) vary += accelleration * 2;
+                    else if (vary > maxSpeed) vary = maxSpeed;
+                }
+                if (keyboardState.IsKeyDown(Keys.D))
+                {
+                    if (vary > 0) vary -= accelleration * 4;
+                    else if (vary > -maxSpeed) vary -= accelleration * 2;
+                    else if (vary < -maxSpeed) vary = -maxSpeed;
+                }
+            }
+            
+            
+
+            back1.Update(Window, 10f*vary, 0f);
+            back2.Update(Window, 12f*vary, 0f);
+            back3.Update(Window, 18f*vary, 0f);
+
+            
+
+
 
             // TODO: Add your update logic here
-
             base.Update(gameTime);
         }
 

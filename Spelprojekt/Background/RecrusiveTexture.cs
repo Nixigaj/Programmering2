@@ -11,7 +11,7 @@ namespace Spelprojekt.Background
         private int iterationsX;
         private int iterationsY;
 
-        public RecrusiveTexture(Texture2D texture, float X, float Y, int iterationsX, int iterationsY) : base(texture, X, Y)
+        public RecrusiveTexture(Texture2D[] texture, float X, float Y, int iterationsX, int iterationsY) : base(texture, X, Y)
         {
             this.iterationsX = iterationsX;
             this.iterationsY = iterationsY;
@@ -25,10 +25,10 @@ namespace Spelprojekt.Background
                 float offsetX = 0;
                 for (int j = 0; j < iterationsX; j++)
                 {
-                    spriteBatch.Draw(texture, new Vector2(position.X + offsetX, position.Y + offsetY), Color.White);
-                    offsetX += texture.Width;
+                    spriteBatch.Draw(texture[(int)currentTexture], new Vector2(position.X + offsetX, position.Y + offsetY), Color.White);
+                    offsetX += texture[(int)currentTexture].Width;
                 }
-                offsetY += texture.Height;
+                offsetY += texture[(int)currentTexture].Height;
             }
         }
 
@@ -45,7 +45,7 @@ namespace Spelprojekt.Background
 
         //public override float X { get { return position.X; } }
         //public override float Y { get { return position.Y; } }
-        public override float Width { get { return texture.Width * iterationsX; } }
-        public override float Height { get { return texture.Height * iterationsY; } }
+        public override float Width { get { return texture[(int)currentTexture].Width * iterationsX; } }
+        public override float Height { get { return texture[(int)currentTexture].Height * iterationsY; } }
     }
 }
