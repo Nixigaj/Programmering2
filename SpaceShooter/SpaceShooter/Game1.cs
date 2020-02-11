@@ -92,8 +92,6 @@ namespace SpaceShooter
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
-
-
             if (!Keyboard.GetState().IsKeyDown(Keys.Space)) GraphicsDevice.Clear(backgroundColor);
 
             spriteBatch.Begin();   // Starta "bildUppritaren"
@@ -104,6 +102,6 @@ namespace SpaceShooter
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
-        } 
+        }
     }
 }

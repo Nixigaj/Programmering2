@@ -17,9 +17,9 @@ namespace SpaceShooter.Abstract_objects
 
         public virtual void Update(GameWindow window) { }
 
-        public virtual void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch, Vector2 cameraPos)
         {
-            spriteBatch.Draw(texture, vector, Color.White);
+            spriteBatch.Draw(texture, vector + cameraPos, Color.White);
         }
 
         public float X { get { return vector.X; } }

@@ -60,10 +60,11 @@ namespace Spelprojekt
             Texture2D[] middle = new Texture2D[1];
             Texture2D[] front = new Texture2D[1];
 
-            back[0] = Content.Load<Texture2D>("RecrusiveTextures/worn_stone2");
-            middle[0] = Content.Load<Texture2D>("RecrusiveTextures/tappar");
-            front[0] = Content.Load<Texture2D>("RecrusiveTextures/topAndBottom");
+            back[0] = Content.Load<Texture2D>("Textures/level1/background/back/1");
+            middle[0] = Content.Load<Texture2D>("Textures/level1/background/middle/1");
+            front[0] = Content.Load<Texture2D>("Textures/level1/background/front");
 
+            
 
             back1 = new RecrusiveTexture(back, 0f, 0f, 100, 1);
             back2 = new RecrusiveTexture(middle, 0f, 0f, 100, 1);

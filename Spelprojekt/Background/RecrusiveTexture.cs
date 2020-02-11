@@ -8,13 +8,17 @@ namespace Spelprojekt.Background
     class RecrusiveTexture : GameObject
     {
         // Hur många texturer som bredd och höjd
-        private int iterationsX;
-        private int iterationsY;
+        protected int iterationsX;
+        protected int iterationsY;
+        protected float width;
+        protected float height;
 
-        public RecrusiveTexture(Texture2D[] texture, float X, float Y, int iterationsX, int iterationsY) : base(texture, X, Y)
+        public RecrusiveTexture(Texture2D[] texture, float X, float Y, int iterationsX, int iterationsY) : base(texture, X, Y, )
         {
             this.iterationsX = iterationsX;
             this.iterationsY = iterationsY;
+            width = texture[0].Width * iterationsX;
+            height = texture[0].Height * iterationsY;
         }
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -37,15 +41,16 @@ namespace Spelprojekt.Background
             
         }
 
-        public void Update(GameWindow window, float speedNudgeX, float speedNudgeY)
+        // Bra för rekrusiva texturer som ska repeteras
+        public void Nudge(int NudgeX, int NudgeY)
         {
-            position.X += speedNudgeX;
-            position.Y += speedNudgeY;
+            position.X += NudgeX * texture[0].Width;
+            position.Y += NudgeY * texture[0].Height;
         }
 
         //public override float X { get { return position.X; } }
         //public override float Y { get { return position.Y; } }
-        public override float Width { get { return texture[(int)currentTexture].Width * iterationsX; } }
-        public override float Height { get { return texture[(int)currentTexture].Height * iterationsY; } }
+        public override float Width { get { return width; } }
+        public override float Height { get { return height; } }
     }
 }
