@@ -40,6 +40,7 @@
   <ItemGroup>
     <Compile Include="Abstract objects\GameObject.cs" />
     <Compile Include="Abstract objects\MovingObject.cs" />
+    <Compile Include="Background\Background.cs" />
     <Compile Include="Background\RecrusiveTexture.cs" />
     <Compile Include="Engine\Camera.cs" />
     <Compile Include="Engine\Physics.cs" />

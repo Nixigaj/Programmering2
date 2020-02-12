@@ -56,19 +56,19 @@ namespace Spelprojekt
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
+            /*
             Texture2D[] back = new Texture2D[1];
             Texture2D[] middle = new Texture2D[1];
             Texture2D[] front = new Texture2D[1];
-
             back[0] = Content.Load<Texture2D>("Textures/level1/background/back/1");
             middle[0] = Content.Load<Texture2D>("Textures/level1/background/middle/1");
             front[0] = Content.Load<Texture2D>("Textures/level1/background/front");
-
+            */
             
 
-            back1 = new RecrusiveTexture(back, 0f, 0f, 100, 1);
-            back2 = new RecrusiveTexture(middle, 0f, 0f, 100, 1);
-            back3 = new RecrusiveTexture(front, 0f, 0f, 100, 1);
+            back1 = new RecrusiveTexture(Content.Load<Texture2D>("Textures/level1/background/back/1"), 0f, 0f, 100, 1);
+            back2 = new RecrusiveTexture(Content.Load<Texture2D>("Textures/level1/background/middle/1"), 0f, 0f, 100, 1);
+            back3 = new RecrusiveTexture(Content.Load<Texture2D>("Textures/level1/background/front"), 0f, 0f, 100, 1);
 
             // TODO: use this.Content to load your game content here
         }
@@ -121,11 +121,11 @@ namespace Spelprojekt
             
             
 
-            back1.Update(Window, 10f*vary, 0f);
-            back2.Update(Window, 12f*vary, 0f);
-            back3.Update(Window, 18f*vary, 0f);
+            back1.Move(10f*vary, 0f);
+            back1.Move(12f * vary, 0f);
+            back1.Move(18f * vary, 0f);
 
-            
+
 
 
 

@@ -12,23 +12,15 @@ namespace Spelprojekt.Abstract_objects
         protected float currentTexture = 0;
         protected Texture2D[] texture;
         protected Vector2 position;
-        protected float scale = 1;
+        protected float scale = 2;
         protected float updateStep;
-        private float x;
-        private float y;
+        //private float x;
+        //private float y;
 
         // Konstruktorer
         public GameObject(string texturePath, float X, float Y, int framerate, ContentManager content)
         {
-            // Hur många texturer som ska användas
-            int tCount = Directory.GetFiles("" + texturePath, "*", SearchOption.AllDirectories).Length;
-            //                                    ^^^ Detta kanske måste åtgärdas senare
-
-            texture = new Texture2D[tCount];
-            for (int i = 1; i <= tCount; i++)
-            {
-                texture[i - 1] = content.Load<Texture2D>(texturePath+"/"+i.ToString());
-            }
+            texture = LoadAnimatedTexture(texturePath, content);
 
             position.X = X;
             position.Y = Y;
@@ -39,8 +31,8 @@ namespace Spelprojekt.Abstract_objects
         public GameObject(Texture2D texture, float X, float Y)
         {
             this.texture[0] = texture;
-            position.X = X;
-            position.Y = Y;
+            //position.X = X;
+            //position.Y = Y;
         }
 
         ////////////////////////////////////
@@ -67,7 +59,20 @@ namespace Spelprojekt.Abstract_objects
             else currentTexture = (currentTexture + frameAmount) - texture.Length;
         }
 
+        protected virtual Texture2D[] LoadAnimatedTexture(string texturePath, ContentManager content)
+        {
+            // Hur många texturer som ska användas
+            int tCount = Directory.GetFiles("" + texturePath, "*", SearchOption.AllDirectories).Length;
+            //                                    ^^^ Detta kanske måste åtgärdas senare
 
+            texture = new Texture2D[tCount];
+            for (int i = 1; i <= tCount; i++)
+            {
+                texture[i - 1] = content.Load<Texture2D>(texturePath + "/" + i.ToString());
+            }
+
+            return texture;
+        }
         
         public virtual float X { get { return position.X; } }
         public virtual float Y { get { return position.Y; } }

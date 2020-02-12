@@ -53,6 +53,8 @@ namespace Spelprojekt.Background
             height = this.texture[0].Height * iterationsY;
         }
 
+
+
         ///////////////////////////////
 
         public override void Draw(SpriteBatch spriteBatch)
@@ -80,6 +82,12 @@ namespace Spelprojekt.Background
         {
             position.X += NudgeX * texture[0].Width;
             position.Y += NudgeY * texture[0].Height;
+        }
+
+        public void Move(float moveX, float moveY)
+        {
+            position.X += moveX;
+            position.Y += moveY;
         }
 
         //public override float X { get { return position.X; } }

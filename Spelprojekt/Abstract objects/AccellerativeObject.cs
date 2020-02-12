@@ -1,4 +1,5 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Spelprojekt.Abstract_objects;
 using System;
@@ -12,14 +13,33 @@ namespace Spelprojekt.Physical
     class AccellerativeObject : MovingObject
     {
         // Styrka på accelleration
-        protected float accelleration;
-        protected Vector2 speed;
+        protected Vector2 accelleration;
         protected float smoothing;
 
-        public AccellerativeObject(Texture2D[] texture, float X, float Y, float speedX, float speedY) : base(texture, X, Y, speedX, speedY)
+        // Konstruktorer
+        public AccellerativeObject(string texturePath, float X, float Y, float speedX, float speedY, int framerate, ContentManager content) : base(texturePath, X, Y, speedX, speedY, framerate, content)
         {
+            texture = LoadAnimatedTexture(texturePath, content);
 
+            position.X = X;
+            position.Y = Y;
+
+            speed.X = speedX;
+            speed.Y = speedY;
+
+            updateStep = framerate / 60f;
         }
+
+        public AccellerativeObject(Texture2D texture, float X, float Y, float speedX, float speedY) : base(texture, X, Y, speedX, speedY)
+        {
+            this.texture[0] = texture;
+            position.X = X;
+            position.Y = Y;
+
+            speed.X = speedX;
+            speed.Y = speedY;
+        }
+        //////////////////////////////////
 
         //public AccellerativeObject(float accelleration, float speedX, float speedY)
         //{
