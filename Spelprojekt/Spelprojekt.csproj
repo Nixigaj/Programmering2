@@ -109,6 +109,7 @@
     <Content Include="Content\Textures\player\ship\5.png" />
     <Content Include="Content\Textures\player\ship\6.png" />
     <Content Include="Content\Textures\player\trail.png" />
+    <Content Include="hurSpela.txt" />
     <Content Include="Icon.ico" />
   </ItemGroup>
   <ItemGroup>

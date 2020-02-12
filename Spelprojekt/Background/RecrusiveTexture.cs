@@ -1,7 +1,9 @@
 ﻿using Microsoft.Xna.Framework;
+using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Spelprojekt.Abstract_objects;
 using Spelprojekt.Physical;
+using System.IO;
 
 namespace Spelprojekt.Background
 {
@@ -13,13 +15,45 @@ namespace Spelprojekt.Background
         protected float width;
         protected float height;
 
-        public RecrusiveTexture(Texture2D[] texture, float X, float Y, int iterationsX, int iterationsY) : base(texture, X, Y, )
+        // Konstrukyorer
+        public RecrusiveTexture(string texturePath, float X, float Y, int iterationsX, int iterationsY, int framerate, ContentManager content) : base(texturePath, X, Y, framerate, content)
         {
             this.iterationsX = iterationsX;
             this.iterationsY = iterationsY;
+
+            // Hur många texturer som ska användas
+            int tCount = Directory.GetFiles("" + texturePath, "*", SearchOption.AllDirectories).Length;
+            //                                    ^^^ Detta kanske måste åtgärdas senare
+
+            texture = new Texture2D[tCount];
+            for (int i = 1; i <= tCount; i++)
+            {
+                texture[i - 1] = content.Load<Texture2D>(texturePath + "/" + i.ToString());
+            }
+
+            position.X = X;
+            position.Y = Y;
+
+            updateStep = framerate / 60f;
+
             width = texture[0].Width * iterationsX;
             height = texture[0].Height * iterationsY;
         }
+
+        public RecrusiveTexture(Texture2D texture, float X, float Y, int iterationsX, int iterationsY) : base (texture, X ,Y)
+        {
+            this.iterationsX = iterationsX;
+            this.iterationsY = iterationsY;
+
+            this.texture[0] = texture;
+            position.X = X;
+            position.Y = Y;
+
+            width = this.texture[0].Width * iterationsX;
+            height = this.texture[0].Height * iterationsY;
+        }
+
+        ///////////////////////////////
 
         public override void Draw(SpriteBatch spriteBatch)
         {

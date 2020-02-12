@@ -21,8 +21,8 @@ namespace Spelprojekt.Abstract_objects
         public GameObject(string texturePath, float X, float Y, int framerate, ContentManager content)
         {
             // Hur många texturer som ska användas
-            int tCount = Directory.GetFiles(texturePath, "*", SearchOption.AllDirectories).Length;
-            //                                  ^^^ Detta kanske måste åtgärdas senare
+            int tCount = Directory.GetFiles("" + texturePath, "*", SearchOption.AllDirectories).Length;
+            //                                    ^^^ Detta kanske måste åtgärdas senare
 
             texture = new Texture2D[tCount];
             for (int i = 1; i <= tCount; i++)

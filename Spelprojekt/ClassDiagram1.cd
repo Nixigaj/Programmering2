@@ -1,0 +1,88 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Spelprojekt.Physical.AccellerativeObject" Collapsed="true">
+    <Position X="5.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAIAAAAAAAAAAAAAAAAAAAAAAAAARAAAAQAAAAAAAA=</HashCode>
+      <FileName>Abstract objects\AccellerativeObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Physical.Collision" Collapsed="true">
+    <Position X="8.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Physical\Collision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Abstract_objects.GameObject" Collapsed="true">
+    <Position X="1.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAABAAAAgAAAAAAIEAAAAAAAgAAAAAAAABAYAA=</HashCode>
+      <FileName>Abstract objects\GameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Abstract_objects.MovingObject" Collapsed="true">
+    <Position X="0.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstract objects\MovingObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Background.RecrusiveTexture" Collapsed="true">
+    <Position X="2.75" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAQAAABAAAAgAAAAAAAEAAAAAAABACAAAAAAAAAAA=</HashCode>
+      <FileName>Background\RecrusiveTexture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Engine.Camera" Collapsed="true">
+    <Position X="7" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAACAAAAAAAYAA=</HashCode>
+      <FileName>Engine\Camera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Engine.PhysicsHandeler" Collapsed="true">
+    <Position X="5.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Physics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Engine.Physics" Collapsed="true">
+    <Position X="8.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Physics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Game1" Collapsed="true">
+    <Position X="5.25" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQIEEAAAAACAwQAAAAAAAAAAEBAAAgAAAAAAAAAIAQ=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Program" Collapsed="true">
+    <Position X="7" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Visual.MotionBlur" Collapsed="true">
+    <Position X="7" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Visual\MotionBlur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Spelprojekt.Abstract_objects.IUpdate" Collapsed="true">
+    <Position X="5.25" Y="3.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstract objects\GameObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>
