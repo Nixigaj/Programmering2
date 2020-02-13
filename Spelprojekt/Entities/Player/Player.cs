@@ -39,22 +39,22 @@ namespace Spelprojekt.Entities.Player
             
                 if (keyboardState.IsKeyDown(Keys.D))
                 {
-                    ApplyForceX(4f);
+                    ApplyForceX(0.2f);
                 }
                 if (keyboardState.IsKeyDown(Keys.A))
                 {
-                    ApplyForceX(-4f);
+                    ApplyForceX(-0.2f);
                 }
             
 
             
                 if (keyboardState.IsKeyDown(Keys.S))
                 {
-                    ApplyForceY(4f);
+                    ApplyForceY(0.2f);
                 }
                 if (keyboardState.IsKeyDown(Keys.W))
                 {
-                    ApplyForceY(-4f);
+                    ApplyForceY(-0.2f);
                 }
             
 

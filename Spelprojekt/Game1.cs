@@ -20,7 +20,7 @@ namespace Spelprojekt
         public static float unit = 540f; // 1 unit är lika lång som den logiska höjden på banan
         public static Camera camera1 = new Camera(0, 0);
         Background1 background1 = new Background1();
-        //Player player1 = new Player();
+        Player player1;
 
 
         public Game1()
@@ -60,6 +60,8 @@ namespace Spelprojekt
         {
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
+
+            player1 = new Player("Textures/player/ship/", 100f, 100f, 0f, 0f, 1, 0.1f, 12, Content);
 
             /*
             Texture2D[] back = new Texture2D[1];
@@ -113,16 +115,16 @@ namespace Spelprojekt
                 } 
                 graphics.ApplyChanges();
             }
-                
-            
+
+            camera1.ApproachX(player1.X-100f, 0.001f);
 
             background1.Update(camera1);
 
             camera1.Update(graphics);
-            
 
 
 
+            player1.Update(Window);
 
 
             // TODO: Add your update logic here
@@ -144,6 +146,7 @@ namespace Spelprojekt
             
             spriteBatch.Begin(SpriteSortMode.Immediate, null, SamplerState.PointWrap, null, null, null, Matrix.CreateScale(camera1.Scaling));   // Starta "bildUppritaren"
             background1.Draw(spriteBatch, camera1);
+            player1.Draw(spriteBatch, camera1);
             spriteBatch.End();  // Stäng av "bildUppritaren"
 
             // TODO: Add your drawing code here
