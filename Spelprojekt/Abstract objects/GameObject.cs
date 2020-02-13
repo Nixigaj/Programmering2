@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using System.IO;
 using Microsoft.Xna.Framework.Content;
 using System;
+using Spelprojekt.Engine;
 
 namespace Spelprojekt.Abstract_objects
 {
@@ -12,8 +13,9 @@ namespace Spelprojekt.Abstract_objects
         protected float currentTexture = 0;
         protected Texture2D[] texture;
         protected Vector2 position;
-        protected float scale = 2;
         protected float updateStep;
+        protected float width;
+        protected float height;
         //private float x;
         //private float y;
 
@@ -26,14 +28,19 @@ namespace Spelprojekt.Abstract_objects
             position.Y = Y;
 
             updateStep = framerate / 60f;
+
+            //width = texture[0].Width;
         }
 
+        
         public GameObject(Texture2D texture, float X, float Y)
         {
+            this.texture = new Texture2D[1];
             this.texture[0] = texture;
-            //position.X = X;
-            //position.Y = Y;
+            position.X = X;
+            position.Y = Y;
         }
+        
 
         ////////////////////////////////////
 
@@ -42,27 +49,27 @@ namespace Spelprojekt.Abstract_objects
             IncrementTexture();
         }
 
-        public virtual void Draw(SpriteBatch spriteBatch)
+        public virtual void Draw(SpriteBatch spriteBatch, Camera camera)
         {
             spriteBatch.Draw(texture[(int)currentTexture], position, Color.White);
         }
 
         public virtual void IncrementTexture()
         {
-            if (currentTexture + updateStep < texture.Length + 1) currentTexture += updateStep;
+            if (currentTexture + updateStep < texture.Length) currentTexture += updateStep;
             else currentTexture = (currentTexture + updateStep) - texture.Length;
         }
 
         public virtual void IncrementTexture(int frameAmount)
         {
-            if (currentTexture + frameAmount < texture.Length + 1) currentTexture += frameAmount;
+            if (currentTexture + frameAmount < texture.Length) currentTexture += frameAmount;
             else currentTexture = (currentTexture + frameAmount) - texture.Length;
         }
 
         protected virtual Texture2D[] LoadAnimatedTexture(string texturePath, ContentManager content)
         {
             // Hur många texturer som ska användas
-            int tCount = Directory.GetFiles("" + texturePath, "*", SearchOption.AllDirectories).Length;
+            int tCount = Directory.GetFiles("../../../../Content/" + texturePath, "*.png", SearchOption.AllDirectories).Length;
             //                                    ^^^ Detta kanske måste åtgärdas senare
 
             texture = new Texture2D[tCount];
@@ -78,7 +85,9 @@ namespace Spelprojekt.Abstract_objects
         public virtual float Y { get { return position.Y; } }
         public virtual float Width { get { return texture[(int)currentTexture].Width; } }
         public virtual float Height { get { return texture[(int)currentTexture].Height; } }
+        
         //Retunerar center-koordinat för objekt
+        
         public virtual float CenterPosX
         {   
             get
@@ -93,6 +102,7 @@ namespace Spelprojekt.Abstract_objects
                 return position.Y + (texture[(int)currentTexture].Height / 2);
             }
         }
+        
     }
 
     public interface IUpdate

@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Spelprojekt.Background;
+using Spelprojekt.Engine;
 using System;
 
 namespace Spelprojekt
@@ -14,12 +15,11 @@ namespace Spelprojekt
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        
+        //Variabler
+        public static float unit = 540f; // 1 unit är lika lång som den logiska höjden på banan
+        public static Camera camera1 = new Camera(0, 0);
+        Background1 background1 = new Background1();
 
-        //Egna
-        RecrusiveTexture back1;
-        RecrusiveTexture back2;
-        RecrusiveTexture back3;
 
         public Game1()
         {
@@ -27,9 +27,11 @@ namespace Spelprojekt
 
             graphics = new GraphicsDeviceManager(this);
 
+
             graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;  // set this value to the desired width of your window
             graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;   // set this value to the desired height of your window
             graphics.IsFullScreen = true;
+            Window.AllowUserResizing = true;
             graphics.ApplyChanges();
             Content.RootDirectory = "Content";
         }
@@ -42,6 +44,7 @@ namespace Spelprojekt
         /// </summary>
         protected override void Initialize()
         {
+            
             // TODO: Add your initialization logic here
 
             base.Initialize();
@@ -64,11 +67,11 @@ namespace Spelprojekt
             middle[0] = Content.Load<Texture2D>("Textures/level1/background/middle/1");
             front[0] = Content.Load<Texture2D>("Textures/level1/background/front");
             */
-            
 
-            back1 = new RecrusiveTexture(Content.Load<Texture2D>("Textures/level1/background/back/1"), 0f, 0f, 100, 1);
-            back2 = new RecrusiveTexture(Content.Load<Texture2D>("Textures/level1/background/middle/1"), 0f, 0f, 100, 1);
-            back3 = new RecrusiveTexture(Content.Load<Texture2D>("Textures/level1/background/front"), 0f, 0f, 100, 1);
+            background1.Load(Content);
+
+
+            
 
             // TODO: use this.Content to load your game content here
         }
@@ -82,9 +85,7 @@ namespace Spelprojekt
             // TODO: Unload any non ContentManager content here
         }
 
-        float vary = 0;
-        static float maxSpeed = 0.5f;
-        float accelleration = 0.03f * maxSpeed;
+        
 
         /// <summary>
         /// Allows the game to run logic such as updating the world,
@@ -93,37 +94,30 @@ namespace Spelprojekt
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Update(GameTime gameTime)
         {
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape))
-                Exit();
-            KeyboardState keyboardState = Keyboard.GetState();
-
-            if (!keyboardState.IsKeyDown(Keys.D) && !keyboardState.IsKeyDown(Keys.A))
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape)) Exit();
+            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.F11))
             {
-                if (Math.Abs(vary) < accelleration) vary = 0;
-                else if (vary > 0) vary -= accelleration;
-                else if (vary < 0) vary += accelleration;
-            }
-            else
-            {
-                if (keyboardState.IsKeyDown(Keys.A))
+                if (graphics.IsFullScreen)
                 {
-                    if (vary < 0) vary += accelleration * 4;
-                    else if (vary < maxSpeed) vary += accelleration * 2;
-                    else if (vary > maxSpeed) vary = maxSpeed;
+                    graphics.IsFullScreen = false;
+                    graphics.PreferredBackBufferWidth = 800;
+                    graphics.PreferredBackBufferHeight = 600;
                 }
-                if (keyboardState.IsKeyDown(Keys.D))
+                else
                 {
-                    if (vary > 0) vary -= accelleration * 4;
-                    else if (vary > -maxSpeed) vary -= accelleration * 2;
-                    else if (vary < -maxSpeed) vary = -maxSpeed;
-                }
+                    graphics.IsFullScreen = true;
+                    graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;  // set this value to the desired width of your window
+                    graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;
+                } 
+                graphics.ApplyChanges();
             }
-            
+                
             
 
-            back1.Move(10f*vary, 0f);
-            back1.Move(12f * vary, 0f);
-            back1.Move(18f * vary, 0f);
+            background1.Update(camera1);
+
+            camera1.Update(graphics);
+            
 
 
 
@@ -133,23 +127,28 @@ namespace Spelprojekt
             base.Update(gameTime);
         }
 
+
+
         /// <summary>
         /// This is called when the game should draw itself.
         /// </summary>
         /// <param name="gameTime">Provides a snapshot of timing values.</param>
         protected override void Draw(GameTime gameTime)
         {
+
+
             GraphicsDevice.Clear(Color.CornflowerBlue);
 
-            spriteBatch.Begin();   // Starta "bildUppritaren"
-            back1.Draw(spriteBatch);
-            back2.Draw(spriteBatch);
-            back3.Draw(spriteBatch);
+            
+            spriteBatch.Begin(SpriteSortMode.Immediate, null, SamplerState.PointWrap, null, null, null, Matrix.CreateScale(camera1.Scaling));   // Starta "bildUppritaren"
+            background1.Draw(spriteBatch, camera1);
             spriteBatch.End();  // Stäng av "bildUppritaren"
 
             // TODO: Add your drawing code here
 
             base.Draw(gameTime);
         }
+
+
     }
 }

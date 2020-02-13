@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Spelprojekt.Abstract_objects;
+using Spelprojekt.Engine;
 using Spelprojekt.Physical;
 using System.IO;
 
@@ -21,16 +22,7 @@ namespace Spelprojekt.Background
             this.iterationsX = iterationsX;
             this.iterationsY = iterationsY;
 
-            // Hur många texturer som ska användas
-            int tCount = Directory.GetFiles("" + texturePath, "*", SearchOption.AllDirectories).Length;
-            //                                    ^^^ Detta kanske måste åtgärdas senare
-
-            texture = new Texture2D[tCount];
-            for (int i = 1; i <= tCount; i++)
-            {
-                texture[i - 1] = content.Load<Texture2D>(texturePath + "/" + i.ToString());
-            }
-
+            texture = LoadAnimatedTexture(texturePath, content);
             position.X = X;
             position.Y = Y;
 
@@ -45,9 +37,12 @@ namespace Spelprojekt.Background
             this.iterationsX = iterationsX;
             this.iterationsY = iterationsY;
 
+            /*
+            this.texture = new Texture2D[1];
             this.texture[0] = texture;
             position.X = X;
             position.Y = Y;
+            */
 
             width = this.texture[0].Width * iterationsX;
             height = this.texture[0].Height * iterationsY;
@@ -57,7 +52,7 @@ namespace Spelprojekt.Background
 
         ///////////////////////////////
 
-        public override void Draw(SpriteBatch spriteBatch)
+        public override void Draw(SpriteBatch spriteBatch, Camera camera)
         {
             float offsetY = 0;
             for (int i = 0; i < iterationsY; i++)
@@ -92,7 +87,7 @@ namespace Spelprojekt.Background
 
         //public override float X { get { return position.X; } }
         //public override float Y { get { return position.Y; } }
-        public override float Width { get { return width; } }
-        public override float Height { get { return height; } }
+        public float FullWidth { get { return width; } }
+        public float FullHeight { get { return height; } }
     }
 }
