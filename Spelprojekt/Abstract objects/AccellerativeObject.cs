@@ -65,12 +65,12 @@ namespace Spelprojekt.Physical
 
         public void ApplyFriction()
         {
-            if (speed.X > friction) ApplyForceX(-friction);
-            else if (speed.X < -friction) ApplyForceX(friction);
+            if (speed.X > friction / mass) ApplyForceX(-friction / mass);
+            else if (speed.X < -friction / mass) ApplyForceX(friction / mass);
             else speed.X = 0;
 
-            if (speed.Y > friction) ApplyForceY(-friction);
-            else if (speed.Y < -friction) ApplyForceY(friction);
+            if (speed.Y > friction / mass) ApplyForceY(-friction / mass);
+            else if (speed.Y < -friction / mass) ApplyForceY(friction / mass);
             else speed.Y = 0;
         }
 

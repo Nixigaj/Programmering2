@@ -37,26 +37,29 @@ namespace Spelprojekt.Entities.Player
             KeyboardState keyboardState = Keyboard.GetState();
 
             
-                if (keyboardState.IsKeyDown(Keys.D))
-                {
-                    ApplyForceX(0.2f);
-                }
-                if (keyboardState.IsKeyDown(Keys.A))
-                {
-                    ApplyForceX(-0.2f);
-                }
-            
+            if (keyboardState.IsKeyDown(Controls.framåt))
+            {
+                ApplyForceX(0.1f);
+            }
+            if (keyboardState.IsKeyDown(Controls.bakåt))
+            {
+                ApplyForceX(-0.1f);
+            }
 
-            
-                if (keyboardState.IsKeyDown(Keys.S))
-                {
-                    ApplyForceY(0.2f);
-                }
-                if (keyboardState.IsKeyDown(Keys.W))
-                {
-                    ApplyForceY(-0.2f);
-                }
-            
+            if (keyboardState.IsKeyDown(Controls.neråt))
+            {
+                ApplyForceY(0.1f);
+            }
+            if (keyboardState.IsKeyDown(Controls.uppåt))
+            {
+                ApplyForceY(-0.1f);
+            }
+
+            if (speed.X > 1f) speed.X = 1f;
+            if (speed.X < -1f) speed.X = -1f;
+
+            if (speed.Y > 1f) speed.Y = 1f;
+            if (speed.Y < -1f) speed.Y = -1f;
 
             /*
             if (speed.X < 0) speed.X = 0;

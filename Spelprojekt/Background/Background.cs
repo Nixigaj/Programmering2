@@ -21,18 +21,23 @@ namespace Spelprojekt.Background
 
         public void Load(ContentManager content)
         {
-            back = new RecrusiveTexture("Textures/level1/background/back/", 0f, (Game1.unit - 360f) / 2f , 100, 1, 12, 0, content);
-            middle = new RecrusiveTexture("Textures/level1/background/middle/", 0f, (Game1.unit - 500f) / 2f, 100, 1, 12, 0, content);
+            back = new RecrusiveTexture("Textures/level1/background/back/", 0f, (Game1.unit - 360f) / 2f , 100, 1, 12, 2, content);
+            middle = new RecrusiveTexture("Textures/level1/background/middle/", 0f, (Game1.unit - 500f) / 2f, 100, 1, 12, 1, content);
             frontBottom = new RecrusiveTexture(content.Load<Texture2D>("Textures/level1/background/front"), 0f, Game1.unit-64, 1000, 1, 0);
             frontTop = new RecrusiveTexture(content.Load<Texture2D>("Textures/level1/background/frontRotated"), 0f, 0f, 1000, 1, 0);
         }
 
+
         // Experimentativt
+        /*
         static float vary = 0;
         static float maxSpeed = 0.5f;
         static float accelleration = 0.03f * maxSpeed;
+        */
+
         public void Update(Camera camera)
         {
+            /*
             // Experimentativt
             KeyboardState keyboardState = Keyboard.GetState();
 
@@ -58,11 +63,13 @@ namespace Spelprojekt.Background
                 }
             }
             ////////////////////////////////////////////////////////////////////////////////////
+            
 
             back.Move(10f * vary, 0f);
             middle.Move(12f * vary, 0f);
             frontBottom.Move(18f * vary, 0f);
             frontTop.Move(18f * vary, 0f);
+            */
 
             back.IncrementTexture();
             middle.IncrementTexture();
