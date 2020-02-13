@@ -34,9 +34,22 @@ namespace Spelprojekt.Abstract_objects
         }
         //////////////////////////////////
 
+        public void ApplySpeed(float speedX, float speedY)
+        {
+            position.X += speedX;
+            position.Y += speedY;
+        }
+
+        public void ApplySpeed(float factor)
+        {
+            position.X += speed.X * factor;
+            position.Y += speed.Y * factor;
+        }
+
         public void ApplySpeed()
         {
-
+            position.X += speed.X;
+            position.Y += speed.Y;
         }
     }
 }

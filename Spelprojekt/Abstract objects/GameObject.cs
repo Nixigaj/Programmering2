@@ -51,7 +51,7 @@ namespace Spelprojekt.Abstract_objects
 
         public virtual void Draw(SpriteBatch spriteBatch, Camera camera)
         {
-            spriteBatch.Draw(texture[(int)currentTexture], position, Color.White);
+            spriteBatch.Draw(texture[(int)currentTexture], position + camera.ViewPos, Color.White);
         }
 
         public virtual void IncrementTexture()

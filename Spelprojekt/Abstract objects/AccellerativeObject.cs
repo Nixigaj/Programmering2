@@ -13,11 +13,12 @@ namespace Spelprojekt.Physical
     class AccellerativeObject : MovingObject
     {
         // Styrka på accelleration
-        protected Vector2 accelleration;
-        protected float smoothing;
+        //protected Vector2 accelleration;
+        protected float mass;
+        protected float friction;
 
         // Konstruktorer
-        public AccellerativeObject(string texturePath, float X, float Y, float speedX, float speedY, int framerate, ContentManager content) : base(texturePath, X, Y, speedX, speedY, framerate, content)
+        public AccellerativeObject(string texturePath, float X, float Y, float speedX, float speedY, float mass, float friction, int framerate, ContentManager content) : base(texturePath, X, Y, speedX, speedY, framerate, content)
         {
             texture = LoadAnimatedTexture(texturePath, content);
 
@@ -28,9 +29,11 @@ namespace Spelprojekt.Physical
             speed.Y = speedY;
 
             updateStep = framerate / 60f;
+
+            this.mass = mass;
         }
 
-        public AccellerativeObject(Texture2D texture, float X, float Y, float speedX, float speedY) : base(texture, X, Y, speedX, speedY)
+        public AccellerativeObject(Texture2D texture, float X, float Y, float speedX, float speedY, float mass, float friction) : base(texture, X, Y, speedX, speedY)
         {
             this.texture[0] = texture;
             position.X = X;
@@ -39,7 +42,33 @@ namespace Spelprojekt.Physical
             speed.X = speedX;
             speed.Y = speedY;
         }
-        //////////////////////////////////
+        ////////////////////////////////////
+
+        public void ApplyForce(float forceX, float forceY)
+        {
+            speed.X += forceX;
+            speed.Y += forceY;
+        }
+
+        public override void Update(GameWindow window)
+        {
+            ApplySpeed(speed.X/mass, speed.Y/mass);
+
+
+
+            IncrementTexture();
+        }
+
+
+
+
+
+
+
+
+
+
+
 
         //public AccellerativeObject(float accelleration, float speedX, float speedY)
         //{
@@ -48,29 +77,29 @@ namespace Spelprojekt.Physical
         //    speed.Y = speedY;
         //}
 
-        public void ApproachSpeed(Vector2 target)
-        {
-            if (speed.X < target.X)
-            {
-                
-            }
-            else
-            {
+        //public void ApproachSpeed(Vector2 target)
+        //{
+        //    if (speed.X < target.X)
+        //    {
 
-            }
-            if (speed.Y < target.Y)
-            {
+        //    }
+        //    else
+        //    {
 
-            }
-            else
-            {
+        //    }
+        //    if (speed.Y < target.Y)
+        //    {
 
-            }
-        }
+        //    }
+        //    else
+        //    {
 
-        public void ApproachSpeed(Vector2 target, float accelleration)
-        {
+        //    }
+        //}
 
-        }
+        //public void ApproachSpeed(Vector2 target, float accelleration)
+        //{
+
+        //}
     }
 }
