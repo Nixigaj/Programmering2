@@ -31,22 +31,31 @@ namespace Spelprojekt.Engine
 
         public void Update(GraphicsDeviceManager graphics)
         {
+            // Uppdaterar skalan ifall fönstret har omformats
             scale = graphics.PreferredBackBufferHeight / 540f;
+
+            viewPos.X += speed.X;
+            viewPos.Y += speed.Y;
         }
 
         public void ApproachPosition(float X, float Y, float intensity)
         {
-
+            ApproachX(X, intensity);
+            ApproachY(Y, intensity);
         }
 
         public void ApproachX(float X, float intensity)
         {
-            
+            float distance = viewPos.X - X;
+            // Exponentiell distans
+            speed.X = distance * distance * intensity;
         }
 
         public void ApproachY(float Y, float intensity)
         {
-
+            float distance = viewPos.Y - Y;
+            // Exponentiell distans
+            speed.Y = distance * distance * intensity;
         }
 
         public float Scaling { get { return scale; } }

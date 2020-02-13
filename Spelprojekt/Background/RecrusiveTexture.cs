@@ -13,11 +13,12 @@ namespace Spelprojekt.Background
         // Hur många texturer som bredd och höjd
         protected int iterationsX;
         protected int iterationsY;
-        protected float width;
-        protected float height;
+        protected float fullWidth;
+        protected float fullHeight;
+        protected float parralaxFactor = 1;
 
         // Konstrukyorer
-        public RecrusiveTexture(string texturePath, float X, float Y, int iterationsX, int iterationsY, int framerate, ContentManager content) : base(texturePath, X, Y, framerate, content)
+        public RecrusiveTexture(string texturePath, float X, float Y, int iterationsX, int iterationsY, int framerate, float parralaxIntensity, ContentManager content) : base(texturePath, X, Y, framerate, content)
         {
             this.iterationsX = iterationsX;
             this.iterationsY = iterationsY;
@@ -28,11 +29,13 @@ namespace Spelprojekt.Background
 
             updateStep = framerate / 60f;
 
-            width = texture[0].Width * iterationsX;
-            height = texture[0].Height * iterationsY;
+            fullWidth = texture[0].Width * iterationsX;
+            fullHeight = texture[0].Height * iterationsY;
+
+            parralaxFactor = parralaxIntensity + 1;
         }
 
-        public RecrusiveTexture(Texture2D texture, float X, float Y, int iterationsX, int iterationsY) : base (texture, X ,Y)
+        public RecrusiveTexture(Texture2D texture, float X, float Y, int iterationsX, int iterationsY, float parralaxIntensity) : base (texture, X ,Y)
         {
             this.iterationsX = iterationsX;
             this.iterationsY = iterationsY;
@@ -44,8 +47,8 @@ namespace Spelprojekt.Background
             position.Y = Y;
             */
 
-            width = this.texture[0].Width * iterationsX;
-            height = this.texture[0].Height * iterationsY;
+            fullWidth = this.texture[0].Width * iterationsX;
+            fullHeight = this.texture[0].Height * iterationsY;
         }
 
 
@@ -60,16 +63,11 @@ namespace Spelprojekt.Background
                 float offsetX = 0;
                 for (int j = 0; j < iterationsX; j++)
                 {
-                    spriteBatch.Draw(texture[(int)currentTexture], new Vector2(position.X + offsetX, position.Y + offsetY), Color.White);
+                    spriteBatch.Draw(texture[(int)currentTexture], new Vector2(position.X + offsetX + (camera.X/parralaxFactor), position.Y + offsetY + (camera.Y/parralaxFactor)), Color.White);
                     offsetX += texture[(int)currentTexture].Width;
                 }
                 offsetY += texture[(int)currentTexture].Height;
             }
-        }
-
-        public void ApproachSpeed(float frameFactor, float speedX, float speedY)
-        {
-            
         }
 
         // Bra för rekrusiva texturer som ska repeteras
@@ -87,7 +85,7 @@ namespace Spelprojekt.Background
 
         //public override float X { get { return position.X; } }
         //public override float Y { get { return position.Y; } }
-        public float FullWidth { get { return width; } }
-        public float FullHeight { get { return height; } }
+        public float FullWidth { get { return fullWidth; } }
+        public float FullHeight { get { return fullHeight; } }
     }
 }

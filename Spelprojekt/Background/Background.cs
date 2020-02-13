@@ -21,10 +21,10 @@ namespace Spelprojekt.Background
 
         public void Load(ContentManager content)
         {
-            back = new RecrusiveTexture("Textures/level1/background/back/", 0f, (Game1.unit - 360f) / 2f , 100, 1, 12, content);
-            middle = new RecrusiveTexture("Textures/level1/background/middle/", 0f, (Game1.unit - 500f) / 2f, 100, 1, 12, content);
-            frontBottom = new RecrusiveTexture(content.Load<Texture2D>("Textures/level1/background/front"), 0f, Game1.unit-64, 1000, 1);
-            frontTop = new RecrusiveTexture(content.Load<Texture2D>("Textures/level1/background/frontRotated"), 0f, 0f, 1000, 1);
+            back = new RecrusiveTexture("Textures/level1/background/back/", 0f, (Game1.unit - 360f) / 2f , 100, 1, 12, 0, content);
+            middle = new RecrusiveTexture("Textures/level1/background/middle/", 0f, (Game1.unit - 500f) / 2f, 100, 1, 12, 0, content);
+            frontBottom = new RecrusiveTexture(content.Load<Texture2D>("Textures/level1/background/front"), 0f, Game1.unit-64, 1000, 1, 0);
+            frontTop = new RecrusiveTexture(content.Load<Texture2D>("Textures/level1/background/frontRotated"), 0f, 0f, 1000, 1, 0);
         }
 
         // Experimentativt

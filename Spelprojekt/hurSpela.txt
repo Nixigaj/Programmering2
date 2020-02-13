@@ -1,1 +1,4 @@
-﻿Använd A och D för att färdas höger eller vänster.
+﻿Använd W, A, S, och D för att färdas.
+
+Tryck på f11 för att lämna fullskärm.
+Fönstret kan dynamiskt skalas om du drar i dess kanter.

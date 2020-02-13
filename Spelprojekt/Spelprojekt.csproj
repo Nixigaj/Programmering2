@@ -44,6 +44,7 @@
     <Compile Include="Background\RecrusiveTexture.cs" />
     <Compile Include="Engine\Camera.cs" />
     <Compile Include="Engine\Physics.cs" />
+    <Compile Include="Entities\Player\Player.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Abstract objects\AccellerativeObject.cs" />
     <Compile Include="Objects\Objects.cs" />
@@ -120,7 +121,6 @@
     <Folder Include="Audio\" />
     <Folder Include="Content\Audio\" />
     <Folder Include="Controls\" />
-    <Folder Include="Objects\Entities\Player\" />
     <Folder Include="Tools\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />

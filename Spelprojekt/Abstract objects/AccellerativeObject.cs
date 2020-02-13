@@ -31,6 +31,7 @@ namespace Spelprojekt.Physical
             updateStep = framerate / 60f;
 
             this.mass = mass;
+            this.friction = friction;
         }
 
         public AccellerativeObject(Texture2D texture, float X, float Y, float speedX, float speedY, float mass, float friction) : base(texture, X, Y, speedX, speedY)
@@ -43,18 +44,47 @@ namespace Spelprojekt.Physical
             speed.Y = speedY;
         }
         ////////////////////////////////////
-
+        
+        // Kraftapplicering
         public void ApplyForce(float forceX, float forceY)
         {
+            ApplyForceX(forceX);
+            ApplyForceY(forceY);
+        }
+
+        public void ApplyForceX(float forceX)
+        {
             speed.X += forceX;
+        }
+
+        public void ApplyForceY(float forceY)
+        {
             speed.Y += forceY;
+        }
+        //////////////////////////////////////////////////////////////
+
+        public void ApplyFriction()
+        {
+            if (speed.X > friction) ApplyForceX(-friction);
+            else if (speed.X < -friction) ApplyForceX(friction);
+            else speed.X = 0;
+
+            if (speed.Y > friction) ApplyForceY(-friction);
+            else if (speed.Y < -friction) ApplyForceY(friction);
+            else speed.Y = 0;
+        }
+
+        public void ApplyMovement()
+        {
+            ApplySpeed(speed.X / mass, speed.Y / mass);
         }
 
         public override void Update(GameWindow window)
         {
-            ApplySpeed(speed.X/mass, speed.Y/mass);
+            ApplyMovement();
+            ApplyFriction();
 
-
+            
 
             IncrementTexture();
         }

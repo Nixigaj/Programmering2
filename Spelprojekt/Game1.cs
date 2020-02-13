@@ -3,6 +3,7 @@ using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Spelprojekt.Background;
 using Spelprojekt.Engine;
+using Spelprojekt.Entities.Player;
 using System;
 
 namespace Spelprojekt
@@ -19,6 +20,7 @@ namespace Spelprojekt
         public static float unit = 540f; // 1 unit är lika lång som den logiska höjden på banan
         public static Camera camera1 = new Camera(0, 0);
         Background1 background1 = new Background1();
+        //Player player1 = new Player();
 
 
         public Game1()

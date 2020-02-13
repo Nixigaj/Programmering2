@@ -14,8 +14,6 @@ namespace Spelprojekt.Abstract_objects
         protected Texture2D[] texture;
         protected Vector2 position;
         protected float updateStep;
-        protected float width;
-        protected float height;
         //private float x;
         //private float y;
 
