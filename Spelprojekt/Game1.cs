@@ -61,7 +61,7 @@ namespace Spelprojekt
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            player1 = new Player("Textures/player/ship/", 100f, 100f, 0f, 0f, 0.1f, 0.005f, 12, Content);
+            player1 = new Player("Textures/player/ship/", 200f, 100f, 0f, 0f, 0.1f, 0.005f, 12, Content);
 
             /*
             Texture2D[] back = new Texture2D[1];
@@ -117,7 +117,7 @@ namespace Spelprojekt
             }
             player1.Update(Window);
 
-            camera1.ApproachX(player1.X-200f*camera1.WScale, 0.01f, 1.2f);
+            camera1.ApproachX(player1.X-200f, 0.01f, 1.2f, 2);
 
             background1.Update(camera1);
 

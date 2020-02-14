@@ -42,19 +42,19 @@ namespace Spelprojekt.Engine
             viewPos.Y += speed.Y;
         }
 
-        public void ApproachPosition(float X, float Y, float speed, float intensity)
+        public void ApproachPosition(float X, float Y, float speed, float intensity, float backwardsFactor)
         {
-            ApproachX(X, intensity, speed);
+            ApproachX(X, intensity, speed, backwardsFactor);
             ApproachY(Y, intensity, speed);
         }
 
-        public void ApproachX(float X, float speed, float intensity)
+        public void ApproachX(float X, float speed, float intensity, float backwardsFactor)
         {
             float distance = X - viewPos.X;
 
             // Exponentiell distans
             if (distance > 0) this.speed.X = (float)Math.Pow(distance, intensity) * speed;
-            else this.speed.X = (float)-Math.Pow(-distance, intensity) * speed*4;
+            else this.speed.X = (float)-Math.Pow(-distance, intensity) * speed * backwardsFactor;
         }
 
         public void ApproachY(float Y, float speed, float intensity)
@@ -63,7 +63,7 @@ namespace Spelprojekt.Engine
 
             // Exponentiell distans
             if (distance > 0) this.speed.Y = (float)Math.Pow(distance, intensity) * speed;
-            else this.speed.Y = (float)-Math.Pow(-distance, intensity) * speed*4;
+            else this.speed.Y = (float)-Math.Pow(-distance, intensity) * speed;
 
         }
 
