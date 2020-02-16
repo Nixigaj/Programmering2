@@ -8,7 +8,7 @@ using System.IO;
 
 namespace Spelprojekt.Background
 {
-    class RecrusiveTexture : GameObject
+    public class RecrusiveTexture : GameObject
     {
         // Hur många texturer som bredd och höjd
         protected int iterationsX;
@@ -17,7 +17,7 @@ namespace Spelprojekt.Background
         protected float fullHeight;
         protected float parralaxFactor = 1;
 
-        // Konstrukyorer
+        // Konstruktorer
         public RecrusiveTexture(string texturePath, float X, float Y, int iterationsX, int iterationsY, int framerate, float parralaxIntensity, ContentManager content) : base(texturePath, X, Y, framerate, content)
         {
             this.iterationsX = iterationsX;
@@ -54,7 +54,7 @@ namespace Spelprojekt.Background
 
 
         ///////////////////////////////
-
+        // Draw funktioner
         public override void Draw(SpriteBatch spriteBatch, Camera camera)
         {
             float offsetY = 0;
@@ -70,22 +70,53 @@ namespace Spelprojekt.Background
             }
         }
 
-        // Bra för rekrusiva texturer som ska repeteras
-        public void Nudge(int NudgeX, int NudgeY)
+        public void Draw(SpriteBatch spriteBatch, Camera camera, int xSlack, int ySlack)
         {
-            position.X += NudgeX * texture[0].Width;
-            position.Y += NudgeY * texture[0].Height;
+            float offsetY = 0;
+            for (int i = 0; i < iterationsY; i++)
+            {
+                float offsetX = 0;
+                for (int j = 0; j < iterationsX; j++)
+                {
+                    spriteBatch.Draw(texture[(int)currentTexture], new Vector2(position.X + offsetX + (camera.X / parralaxFactor) + (xSlack*Width), position.Y + offsetY + (camera.Y / parralaxFactor) + (ySlack * Height)), Color.White);
+                    offsetX += texture[(int)currentTexture].Width;
+                }
+                offsetY += texture[(int)currentTexture].Height;
+            }
+        }
+        //////////////////////////////
+        // Bra för rekrusiva texturer som ska repeteras
+        public void Nudge(int nudgeX, int nudgeY)
+        {
+            NudgeX(nudgeX);
+            NudgeY(nudgeY);
         }
 
+        public void NudgeX(int nudgeAmount)
+        {
+            position.X += nudgeAmount * texture[0].Width;
+        }
+
+        public void NudgeY(int nudgeAmount)
+        {
+            position.Y += nudgeAmount * texture[0].Height;
+        }
+        ////////////////////////////////////////////////
+
+        /*
         public void Move(float moveX, float moveY)
         {
             position.X += moveX;
             position.Y += moveY;
         }
+        */
 
         //public override float X { get { return position.X; } }
         //public override float Y { get { return position.Y; } }
         public float FullWidth { get { return fullWidth; } }
         public float FullHeight { get { return fullHeight; } }
+        public int IterationsX { get { return iterationsX; } set { iterationsX = value; } }
+        public int IterationsY { get { return iterationsY; } set { iterationsY = value; } }
+        public float ParralaxFactor { get { return parralaxFactor; } }
     }
 }

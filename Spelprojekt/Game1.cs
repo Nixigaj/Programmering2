@@ -20,7 +20,7 @@ namespace Spelprojekt
         public static float unit = 540f; // 1 unit är lika lång som den logiska höjden på banan
         public static Camera camera1 = new Camera(0, 0);
         Background1 background1 = new Background1();
-        Player player1;
+        Ship player1;
 
 
         public Game1()
@@ -28,7 +28,6 @@ namespace Spelprojekt
             this.IsMouseVisible = true;
 
             graphics = new GraphicsDeviceManager(this);
-
 
             graphics.PreferredBackBufferWidth = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Width;  // set this value to the desired width of your window
             graphics.PreferredBackBufferHeight = GraphicsAdapter.DefaultAdapter.CurrentDisplayMode.Height;   // set this value to the desired height of your window
@@ -61,7 +60,7 @@ namespace Spelprojekt
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            player1 = new Player("Textures/player/ship/", 200f, 100f, 0f, 0f, 0.1f, 0.005f, 12, Content);
+            player1 = new Ship("Textures/player/ship/", 200f, 100f, 0f, 0f, 0.1f, 0.005f, 12, Content);
 
             /*
             Texture2D[] back = new Texture2D[1];
@@ -89,8 +88,6 @@ namespace Spelprojekt
             // TODO: Unload any non ContentManager content here
         }
 
-        
-
         /// <summary>
         /// Allows the game to run logic such as updating the world,
         /// checking for collisions, gathering input, and playing audio.
@@ -99,7 +96,7 @@ namespace Spelprojekt
         protected override void Update(GameTime gameTime)
         {
             if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.Escape)) Exit();
-            if (GamePad.GetState(PlayerIndex.One).Buttons.Back == ButtonState.Pressed || Keyboard.GetState().IsKeyDown(Keys.F11))
+            if (Keyboard.HasBeenPressed(Keys.F11))
             {
                 if (graphics.IsFullScreen)
                 {
@@ -117,22 +114,15 @@ namespace Spelprojekt
             }
             player1.Update(Window);
 
-            camera1.ApproachX(player1.X-200f, 0.01f, 1.2f, 2);
+            camera1.ApproachX(player1.CenterPosX-250f*camera1.WidthFactor, 0.01f, 1.2f, 3);
 
             background1.Update(camera1);
-
-            camera1.Update(graphics);
-
-
-
             
-
+            camera1.Update(graphics, GraphicsDevice);
 
             // TODO: Add your update logic here
             base.Update(gameTime);
         }
-
-
 
         /// <summary>
         /// This is called when the game should draw itself.

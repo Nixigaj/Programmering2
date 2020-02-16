@@ -4,10 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spelprojekt.Physical
+namespace Spelprojekt.Visual
 {
-    class Collision
+    class Flare
     {
-
     }
 }

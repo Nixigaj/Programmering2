@@ -40,18 +40,23 @@
   <ItemGroup>
     <Compile Include="Abstract objects\GameObject.cs" />
     <Compile Include="Abstract objects\MovingObject.cs" />
+    <Compile Include="Abstract objects\PhysicalObject.cs" />
     <Compile Include="Background\Background.cs" />
     <Compile Include="Background\RecrusiveTexture.cs" />
-    <Compile Include="Controls\Controls.cs" />
+    <Compile Include="Control\Controls.cs" />
+    <Compile Include="Control\Keyboard.cs" />
+    <Compile Include="Control\Mouse.cs" />
     <Compile Include="Engine\Camera.cs" />
     <Compile Include="Engine\Physics.cs" />
-    <Compile Include="Entities\Player\Player.cs" />
+    <Compile Include="Entities\Player\Ship.cs" />
     <Compile Include="Game1.cs" />
     <Compile Include="Abstract objects\AccellerativeObject.cs" />
     <Compile Include="Objects\Objects.cs" />
     <Compile Include="Physical\Collision.cs" />
+    <Compile Include="Physical\Hitbox.cs" />
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Visual\Flare.cs" />
     <Compile Include="Visual\MotionBlur.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -121,7 +126,6 @@
   <ItemGroup>
     <Folder Include="Audio\" />
     <Folder Include="Content\Audio\" />
-    <Folder Include="Tools\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath)\MonoGame\v3.0\MonoGame.Content.Builder.targets" />

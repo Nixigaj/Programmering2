@@ -5,7 +5,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spelprojekt
+namespace Spelprojekt.Control
 {
     public static class Controls
     {
@@ -13,5 +13,6 @@ namespace Spelprojekt
         public static Keys bakåt = Keys.A;
         public static Keys neråt = Keys.S;
         public static Keys framåt = Keys.D;
+        public static Keys uppåtKraft = Keys.Space;
     }
 }

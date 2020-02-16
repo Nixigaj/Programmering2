@@ -8,7 +8,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace Spelprojekt.Physical
+namespace Spelprojekt.Abstract_objects
 {
     class AccellerativeObject : MovingObject
     {

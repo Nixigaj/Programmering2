@@ -7,7 +7,7 @@ using Spelprojekt.Engine;
 
 namespace Spelprojekt.Abstract_objects
 {
-    abstract class GameObject
+    public abstract class GameObject
     {
         // Variabler
         protected float currentTexture = 0;
