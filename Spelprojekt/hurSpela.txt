@@ -1,4 +1,24 @@
-﻿Använd W, A, S, och D för att färdas.
+﻿- - - - - - - - - - - - -
+INSTRUKTIONER FÖR SPELET:
+- - - - - - - - - - - - - 
 
+Ditt mål är att ta dig så långt som möjligt.
+
+Använd A och D för att färdas vänster och höger.
+Använd mellanslag för att färdas uppåt, annars faller du neråt av gravitationen.
+Använd musen för att rikta din kanon, och använd vänster-klick för att avfyra ett skott.
+Försök träffa de svävande fienderna.
+
+Desto längre du kommer, desto oftare blir du attakerad av fienten som blir allt snabbare.
+
+Blir du skadad 10 gånger förloras spelet.
+Poäng och liv visas uppe i vänstra hörnet.
+
+- - -
 Tryck på f11 för att lämna fullskärm.
 Fönstret kan dynamiskt skalas om du drar i dess kanter.
+
+Fusk: Håll in vänster-shift för obegränsad accelleration.
+
+
+// Erik Junsved

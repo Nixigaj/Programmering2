@@ -3,16 +3,18 @@ using Microsoft.Xna.Framework.Content;
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Spelprojekt.Abstract_objects;
+using Spelprojekt.Gamestates;
 using Spelprojekt.Physical;
 using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
 namespace Spelprojekt.Entities.Player
 {
-    class Ship : AccellerativeObject
+    class Ship : PhysicalObject
     {
         public Ship(string texturePath, float X, float Y, float speedX, float speedY, float mass, float friction, int framerate, ContentManager content) : base(texturePath, X, Y, speedX, speedY, mass, friction, framerate, content)
         {
@@ -30,7 +32,9 @@ namespace Spelprojekt.Entities.Player
             this.friction = friction;
         }
 
-        public override void Update(GameWindow window)
+        int waitFrame = 0;
+
+        public bool Update(GameWindow window, List<Enimy> enimies)
         {
             ApplyMovement();
             ApplyFriction();
@@ -39,6 +43,39 @@ namespace Spelprojekt.Entities.Player
             LimitBounraries();
 
             IncrementTexture();
+             
+            UpdateHitboxes();
+
+            if (!(enimies == null))
+            {
+                bool collided = false;
+                foreach (Enimy nuvarande in enimies)
+                {
+
+                    if (CheckCollision(nuvarande.Hitboxes, 200f, nuvarande.CenterPosX, nuvarande.CenterPosY))
+                    {
+                        collided = true;
+                        waitFrame++;
+                    }
+                }
+                if ((!previousCollisionState && collided) || waitFrame > 30)
+                {
+                    Debug.WriteLine("Kollision!");
+                    previousCollisionState = true;
+                    waitFrame = 0;
+                    return true;
+                }
+                else if (previousCollisionState && !collided)
+                {
+                    previousCollisionState = false;
+                    return false;
+                }
+                else return false;
+            }
+            else return false;
+
+
+
 
             /*
             if (!Keyboard.IsPressed(Keys.LeftShift))
@@ -62,9 +99,9 @@ namespace Spelprojekt.Entities.Player
 
         private void LimitBounraries()
         {
-            if (Y + Height > Game1.unit - 64 - 10)
+            if (Y + Height > Gamestate1.unit - 64 - 10)
             {
-                ApplyForceY((float) -(Math.Pow(Y + Height - (Game1.unit - 64 - 10), 1.5f) * 0.01f));
+                ApplyForceY((float) -(Math.Pow(Y + Height - (Gamestate1.unit - 64 - 10), 1.5f) * 0.01f));
             }
             else if (Y < 64 + 10)
             {

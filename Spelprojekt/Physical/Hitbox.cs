@@ -7,15 +7,25 @@ using System.Threading.Tasks;
 
 namespace Spelprojekt.Physical
 {
-    class Hitbox
+    public class Hitbox
     {
-        Rectangle rectangle = new Rectangle(new Point(100, 100), new Point(100, 100));
-        Rectangle rectangle2 = new Rectangle(new Point(100, 100), new Point(100, 100));
+        Rectangle rectangle;
+        private float OffsetX;
+        private float OffsetY;
 
-        int hej()
+        public Hitbox(Rectangle rectangle, float offsetX, float offsetY)
         {
-            bool why = rectangle.Intersects(rectangle2);
-            return -1;
+            this.OffsetX = offsetX;
+            this.OffsetY = offsetY;
+            this.rectangle = new Rectangle(new Point((int)(rectangle.X + offsetX), (int)(rectangle.Y + offsetY)), new Point(rectangle.Width, rectangle.Height));
         }
+
+        public void UpdatePos(float X, float Y)
+        {
+            rectangle.X = (int)(X + OffsetX);
+            rectangle.Y = (int)(Y + OffsetY);
+        }
+
+        public Rectangle Rectangle { get { return rectangle; } set { rectangle = value; } }
     }
 }

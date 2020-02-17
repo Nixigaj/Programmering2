@@ -4,6 +4,7 @@ using Microsoft.Xna.Framework.Input;
 using Spelprojekt.Background;
 using Spelprojekt.Engine;
 using Spelprojekt.Entities.Player;
+using Spelprojekt.Gamestates;
 using System;
 
 namespace Spelprojekt
@@ -16,12 +17,9 @@ namespace Spelprojekt
         GraphicsDeviceManager graphics;
         SpriteBatch spriteBatch;
 
-        //Variabler
-        public static float unit = 540f; // 1 unit är lika lång som den logiska höjden på banan
-        public static Camera camera1 = new Camera(0, 0);
-        Background1 background1 = new Background1();
-        Ship player1;
+        public static Gamestate gamestate = Gamestate.Alive;
 
+        public static bool gamestate2Loaded = false;
 
         public Game1()
         {
@@ -60,7 +58,7 @@ namespace Spelprojekt
             // Create a new SpriteBatch, which can be used to draw textures.
             spriteBatch = new SpriteBatch(GraphicsDevice);
 
-            player1 = new Ship("Textures/player/ship/", 200f, 100f, 0f, 0f, 0.1f, 0.005f, 12, Content);
+            
 
             /*
             Texture2D[] back = new Texture2D[1];
@@ -71,8 +69,8 @@ namespace Spelprojekt
             front[0] = Content.Load<Texture2D>("Textures/level1/background/front");
             */
 
-            background1.Load(Content);
 
+            Gamestate1.LoadContent(Content);
 
             
 
@@ -112,13 +110,24 @@ namespace Spelprojekt
                 } 
                 graphics.ApplyChanges();
             }
-            player1.Update(Window);
 
-            camera1.ApproachX(player1.CenterPosX-250f*camera1.WidthFactor, 0.01f, 1.2f, 3);
+            switch (gamestate)
+            {
+                case Gamestate.Alive: Gamestate1.Update(Window, Content, graphics, GraphicsDevice); return;
+                case Gamestate.Dead:
+                    if (!gamestate2Loaded)
+                    {
+                        Gamestate2.LoadContent(Content);
+                        gamestate2Loaded = true;
+                    }
+                    Gamestate2.Update(Window, Content, graphics, GraphicsDevice);
+                    return;
+            }
 
-            background1.Update(camera1);
+
             
-            camera1.Update(graphics, GraphicsDevice);
+
+
 
             // TODO: Add your update logic here
             base.Update(gameTime);
@@ -132,13 +141,16 @@ namespace Spelprojekt
         {
 
 
-            GraphicsDevice.Clear(Color.CornflowerBlue);
+            GraphicsDevice.Clear(Color.Aquamarine);
+
+
+            switch (gamestate)
+            {
+                case Gamestate.Alive: Gamestate1.Draw(spriteBatch, GraphicsDevice); return;
+                case Gamestate.Dead: Gamestate2.Draw(spriteBatch, GraphicsDevice); return;
+            }
 
             
-            spriteBatch.Begin(SpriteSortMode.Immediate, null, SamplerState.PointWrap, null, null, null, Matrix.CreateScale(camera1.Scaling));   // Starta "bildUppritaren"
-            background1.Draw(spriteBatch, camera1);
-            player1.Draw(spriteBatch, camera1);
-            spriteBatch.End();  // Stäng av "bildUppritaren"
 
             // TODO: Add your drawing code here
 
@@ -146,5 +158,7 @@ namespace Spelprojekt
         }
 
 
+
+        public enum Gamestate{ Alive, Dead }
     }
 }

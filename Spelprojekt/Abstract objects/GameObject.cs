@@ -14,6 +14,7 @@ namespace Spelprojekt.Abstract_objects
         protected Texture2D[] texture;
         protected Vector2 position;
         protected float updateStep;
+        protected float rotation = 0;
         //private float x;
         //private float y;
 
@@ -38,7 +39,31 @@ namespace Spelprojekt.Abstract_objects
             position.X = X;
             position.Y = Y;
         }
-        
+
+        public GameObject(string texturePath, float X, float Y, float rotation, int framerate, ContentManager content)
+        {
+            texture = LoadAnimatedTexture(texturePath, content);
+
+            position.X = X;
+            position.Y = Y;
+
+            updateStep = framerate / 60f;
+
+            this.rotation = rotation;
+
+            //width = texture[0].Width;
+        }
+
+
+        public GameObject(Texture2D texture, float X, float Y, float rotation)
+        {
+            this.texture = new Texture2D[1];
+            this.texture[0] = texture;
+            position.X = X;
+            position.Y = Y;
+
+            this.rotation = rotation;
+        }
 
         ////////////////////////////////////
 
@@ -50,6 +75,11 @@ namespace Spelprojekt.Abstract_objects
         public virtual void Draw(SpriteBatch spriteBatch, Camera camera)
         {
             spriteBatch.Draw(texture[(int)currentTexture], position + camera.ViewPos, Color.White);
+        }
+
+        public virtual void DrawRotation(SpriteBatch spriteBatch, Camera camera)
+        {
+            spriteBatch.Draw(texture[(int)currentTexture], position + camera.ViewPos, null, null, new Vector2(Width/2, Height/2), rotation, null, Color.White, SpriteEffects.None);
         }
 
         public virtual void IncrementTexture()
@@ -78,14 +108,26 @@ namespace Spelprojekt.Abstract_objects
 
             return texture;
         }
-        
-        public virtual float X { get { return position.X; } }
-        public virtual float Y { get { return position.Y; } }
+
+        protected virtual Texture2D[] LoadAnimatedTexture(string texturePath, ContentManager content, int tCount)
+        {
+            texture = new Texture2D[tCount];
+            for (int i = 1; i <= tCount; i++)
+            {
+                texture[i - 1] = content.Load<Texture2D>(texturePath + "/" + i.ToString());
+            }
+
+            return texture;
+        }
+
+        public virtual float X { get { return position.X; } set { position.X = value; } }
+        public virtual float Y { get { return position.Y; } set { position.Y = value; } }
         public virtual float Width { get { return texture[(int)currentTexture].Width; } }
         public virtual float Height { get { return texture[(int)currentTexture].Height; } }
-        
+        public virtual float Rotation { get { return rotation; } }
+
         //Retunerar center-koordinat för objekt
-        
+
         public virtual float CenterPosX
         {   
             get

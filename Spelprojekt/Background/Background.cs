@@ -2,6 +2,7 @@
 using Microsoft.Xna.Framework.Graphics;
 using Microsoft.Xna.Framework.Input;
 using Spelprojekt.Engine;
+using Spelprojekt.Gamestates;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -17,9 +18,9 @@ namespace Spelprojekt.Background
 
         public void Load(ContentManager content)
         {
-            layers[0] = new RecrusiveTexture("Textures/level1/background/back/", 0f, (Game1.unit - 360f) / 2f, 100, 1, 12, 2, content);
-            layers[1] = new RecrusiveTexture("Textures/level1/background/middle/", 0f, (Game1.unit - 500f) / 2f, 100, 1, 12, 1, content);
-            layers[2] = new RecrusiveTexture(content.Load<Texture2D>("Textures/level1/background/front"), 0f, Game1.unit - 64, 100, 1, 0);
+            layers[0] = new RecrusiveTexture("Textures/level1/background/back/", 0f, (Gamestate1.unit - 360f) / 2f, 100, 1, 12, 2, content);
+            layers[1] = new RecrusiveTexture("Textures/level1/background/middle/", 0f, (Gamestate1.unit - 500f) / 2f, 100, 1, 12, 1, content);
+            layers[2] = new RecrusiveTexture(content.Load<Texture2D>("Textures/level1/background/front"), 0f, Gamestate1.unit - 64, 100, 1, 0);
             layers[3] = new RecrusiveTexture(content.Load<Texture2D>("Textures/level1/background/frontRotated"), 0f, 0f, 100, 1, 0);
         }
 

@@ -10,7 +10,7 @@ using System.Threading.Tasks;
 
 namespace Spelprojekt.Abstract_objects
 {
-    class AccellerativeObject : MovingObject
+    public abstract class AccellerativeObject : MovingObject
     {
         // Styrka på accelleration
         //protected Vector2 accelleration;

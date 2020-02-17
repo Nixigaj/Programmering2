@@ -1,0 +1,226 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ClassDiagram MajorVersion="1" MinorVersion="1">
+  <Class Name="Spelprojekt.Abstract_objects.AccellerativeObject" Collapsed="true">
+    <Position X="8.5" Y="3.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>EIQAAAAAAAAAAAABgAAAAAAAAQAAAAAIAAAAAAEAAAA=</HashCode>
+      <FileName>Abstract objects\AccellerativeObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Abstract_objects.GameObject" Collapsed="true">
+    <Position X="8.5" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAEAABAgAAoAAADCAIEAAAAAAEgBAAAAAAABAYAA=</HashCode>
+      <FileName>Abstract objects\GameObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Abstract_objects.MovingObject" Collapsed="true">
+    <Position X="8.5" Y="1.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAIAAAAAAAAAAAAAAAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstract objects\MovingObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Abstract_objects.PhysicalObject" Collapsed="true">
+    <Position X="8.5" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAACAAQAAACEAAAAQAAAAAAAAACAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstract objects\PhysicalObject.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Background.Background1">
+    <Position X="5.75" Y="2.75" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Fields" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AARAgAAABAAAAgAAAAAIAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Background\Background.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Background.RecrusiveTexture" Collapsed="true">
+    <Position X="5.75" Y="2" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>ACAAQAAAAFAAAgAQAAgAAAAAAAAAAAACAAQAAgAkAAA=</HashCode>
+      <FileName>Background\RecrusiveTexture.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Control.Controls" Collapsed="true">
+    <Position X="28" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAABADAAAAAAAQAAAAAAAAAAAAQAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\Controls.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Control.Mouse" Collapsed="true">
+    <Position X="24.5" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>QAAAAAAAIQAAAAAAAAACAQAAAAABAAAAAAAAAAMQAAg=</HashCode>
+      <FileName>Control\Mouse.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Keyboard" Collapsed="true">
+    <Position X="29.75" Y="1.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAgAEAAAAAAAAAAAAAAAAAAIAAAAAAAAAAAAAIAAAg=</HashCode>
+      <FileName>Control\Keyboard.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Engine.Camera" Collapsed="true">
+    <Position X="3.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAUAgAAAAgEAAAAAAAAAAAACAgAAAQAACAAAAAgAYIA=</HashCode>
+      <FileName>Engine\Camera.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Engine.PhysicsHandeler" Collapsed="true">
+    <Position X="29.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Physics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Engine.Physics" Collapsed="true">
+    <Position X="28" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Engine\Physics.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Entities.Enimy" Collapsed="true">
+    <Position X="6.75" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Enimy.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Entities.Player.Bullet" Collapsed="true">
+    <Position X="13.25" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAgQAAAAAAAQAAAEAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Player\Bullet.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Entities.Player.Cannon" Collapsed="true">
+    <Position X="15" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAgAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Entities\Player\Cannon.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Entities.Player.Player">
+    <Position X="12.5" Y="7" Width="3" />
+    <Compartments>
+      <Compartment Name="Properties" Collapsed="true" />
+      <Compartment Name="Methods" Collapsed="true" />
+    </Compartments>
+    <TypeIdentifier>
+      <HashCode>AAQAiQAAAIAAAggAADAIAAEAAAAAAAAAgBAAgAAAAAg=</HashCode>
+      <FileName>Entities\Player\Player.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Entities.Player.Ship" Collapsed="true">
+    <Position X="11.5" Y="6.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAhAAAAEAAAAAAABAAAAAAAAEAAAAgAAAAAAAAA=</HashCode>
+      <FileName>Entities\Player\Ship.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Game1">
+    <Position X="0.75" Y="0.5" Width="1.5" />
+    <Compartments>
+      <Compartment Name="Methods" Collapsed="true" />
+      <Compartment Name="Nested Types" Collapsed="false" />
+    </Compartments>
+    <NestedTypes>
+      <Enum Name="Spelprojekt.Game1.Gamestate" Collapsed="true">
+        <TypeIdentifier>
+          <NewMemberFileName>Game1.cs</NewMemberFileName>
+        </TypeIdentifier>
+      </Enum>
+    </NestedTypes>
+    <TypeIdentifier>
+      <HashCode>AAQAEEAAIAAAAwAAAAAAAAAAAAAAAAgAAAAAAAAAAAU=</HashCode>
+      <FileName>Game1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Program" Collapsed="true">
+    <Position X="24.5" Y="3.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAABAAAAAA=</HashCode>
+      <FileName>Program.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Gamestates.Gamestate1" Collapsed="true">
+    <Position X="2.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>gBQCAEgEAAIgggAQACAAQAgAAAAAQAABAyAAAAAAAAQ=</HashCode>
+      <FileName>Gamestates\Gamestate1.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Gamestates.Gamestate2" Collapsed="true">
+    <Position X="2.25" Y="1.25" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAgACAAAAgAAAAAAAAAAAAAAEAAKAAAAAAAAAAQ=</HashCode>
+      <FileName>Gamestates\Gamestate2.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Objects.Objects" Collapsed="true">
+    <Position X="26.25" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Objects\Objects.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Physical.Collision" Collapsed="true">
+    <Position X="26.25" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Physical\Collision.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Physical.Hitbox" Collapsed="true">
+    <Position X="10" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAACAAAACgAADAAAAAAAAAAAA=</HashCode>
+      <FileName>Physical\Hitbox.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Visual.Flare" Collapsed="true">
+    <Position X="29.75" Y="0.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Visual\Flare.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Class Name="Spelprojekt.Visual.MotionBlur" Collapsed="true">
+    <Position X="22.75" Y="2.5" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Visual\MotionBlur.cs</FileName>
+    </TypeIdentifier>
+  </Class>
+  <Interface Name="Spelprojekt.Abstract_objects.IUpdate" Collapsed="true">
+    <Position X="22.75" Y="4.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAQAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Abstract objects\GameObject.cs</FileName>
+    </TypeIdentifier>
+  </Interface>
+  <Enum Name="Spelprojekt.Background.AvailableLayers" Collapsed="true">
+    <Position X="22.75" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAAEAAAAAAAAAAAAAAAAAAAAAABCAAAACAAAAAAA=</HashCode>
+      <FileName>Background\Background.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Enum Name="Spelprojekt.Control.MouseKey" Collapsed="true">
+    <Position X="24.5" Y="5.75" Width="1.5" />
+    <TypeIdentifier>
+      <HashCode>AAAAAACAABAACAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA=</HashCode>
+      <FileName>Control\Mouse.cs</FileName>
+    </TypeIdentifier>
+  </Enum>
+  <Font Name="Segoe UI" Size="9" />
+</ClassDiagram>

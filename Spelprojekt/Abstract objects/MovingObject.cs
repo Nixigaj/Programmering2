@@ -5,7 +5,7 @@ using System.IO;
 
 namespace Spelprojekt.Abstract_objects
 {
-    abstract class MovingObject : GameObject
+    public abstract class MovingObject : GameObject
     {
         protected Vector2 speed;
 
