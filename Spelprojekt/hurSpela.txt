@@ -17,6 +17,7 @@ Poäng och liv visas uppe i vänstra hörnet.
 - - -
 Tryck på f11 för att lämna fullskärm.
 Fönstret kan dynamiskt skalas om du drar i dess kanter.
+Tryck på ESC för att lädmna spelet.
 
 Fusk: Håll in vänster-shift för obegränsad accelleration.
 
